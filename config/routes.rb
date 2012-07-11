@@ -6,6 +6,7 @@ DonorsWidget::Application.routes.draw do
   resources :users
   match "/logout" => "sessions#destroy", as: "logout"
   match "/login" => "sessions#new", as: "login"
+  match "/reset_password" => "users#reset_password", as: "reset_password"
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action

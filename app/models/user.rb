@@ -13,8 +13,19 @@ class User < ActiveRecord::Base
   end
 
   def reset_password
-    new_password = Array.new(8).map { (65 + rand(58)).chr }.join
+    new_password = generate_random_password
     store_password(new_password)
+    send_password_email(new_password)
+  end
+
+  private
+
+  def send_password_email(new_password)
+    # Pending installation of mailer
     new_password
+  end
+
+  def generate_random_password
+    Array.new(8).map { (65 + rand(58)).chr }.join
   end
 end

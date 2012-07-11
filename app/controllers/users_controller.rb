@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-  before_filter :find_current_user, except: [:new, :create]
+  before_filter :find_current_user, except: [:new, :create, :reset_password]
 
   def new
     @user = User.new
@@ -34,6 +34,17 @@ class UsersController < ApplicationController
     @user.update_attributes(email: uparams[:email]) if uparams[:email]
     @user.store_password(uparams[:password]) if uparams[:password]
   end
+
+  def reset_password
+    if request.post?
+      @user = User.find_by_email(params[:user][:email])
+      @user.reset_password
+      flash[:notice] = "Password reset email has been sent."
+      return redirect_to login_path
+    end
+  end
+
+  private
 
   def find_current_user
     @user = current_user
