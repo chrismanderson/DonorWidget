@@ -1,0 +1,6 @@
+<%= flash[:notice] if flash.any? %>
+<%= form_for :session, url: sessions_path, method: :post do |f| %>
+  <%= f.text_field :email %>
+  <%= f.text_field :password %>
+  <%= f.submit %>
+<% end %>
