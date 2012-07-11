@@ -1,5 +1,22 @@
 require 'spec_helper'
 
 describe User do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it "stores and hashes a password" do
+    u = User.create
+    u.encrypted_password.should be_blank
+    u.store_password("foo")
+    u.encrypted_password.should_not be_blank
+  end
+
+  it "validates correct passwords" do
+    u = User.create
+    u.store_password("foo")
+    u.validate_password("foo").should be_true
+  end
+
+  it "does not validate incorrect passwords" do
+    u = User.create
+    u.store_password("foo")
+    u.validate_password("bar").should be_false
+  end
 end
