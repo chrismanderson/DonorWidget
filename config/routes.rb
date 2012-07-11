@@ -1,4 +1,13 @@
 DonorsWidget::Application.routes.draw do
+
+  get "info/iteration1"
+
+  get "info/iteration2"
+
+  get "info/iteration3"
+
+  root :to => "info#home"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
