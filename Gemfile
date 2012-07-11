@@ -20,6 +20,23 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+group :test, :development do
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
+  gem 'capybara'
+  gem 'guard-rspec'
+  gem 'faker'
+end
+
+group :test do
+  gem "rack-test", require: "rack/test"
+  gem 'guard-spork'
+  gem 'spork'
+  gem 'simplecov', :require => false
+  gem 'launchy'
+  gem 'webmock'
+end
+
 gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
