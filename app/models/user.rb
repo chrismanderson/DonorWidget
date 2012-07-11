@@ -1,12 +1,15 @@
 class User < ActiveRecord::Base
   attr_accessible :email, :encrypted_password, :name
+  attr_accessor :password
+  validates :email, uniqueness: true
 
-  def store_password(password)
-    update_attribute(:encrypted_password, BCrypt::Password.create(password))
+
+  def store_password(new_password)
+    update_attribute(:encrypted_password, BCrypt::Password.create(new_password))
   end
 
-  def validate_password(password)
-    BCrypt::Password.new(encrypted_password) == password
+  def validate_password(input_password)
+    BCrypt::Password.new(encrypted_password) == input_password
   end
 
   def reset_password
