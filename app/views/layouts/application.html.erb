@@ -9,6 +9,8 @@
 <body>
 	<%= render 'layouts/header_in' %>
 <div class="container">
+<p>Current user: <%= current_user ? current_user.email : "Logged out." %></p>
+<%= flash[:notice] if flash.any? %>
 <%= yield %>
 </div>
 </body>

@@ -30,6 +30,7 @@ GEM
       multi_json (~> 1.0)
     addressable (2.2.8)
     arel (3.0.2)
+    bcrypt-ruby (3.0.1)
     bootstrap-colorpicker-rails (0.1)
       railties (>= 3.0)
     builder (3.0.0)
@@ -190,6 +191,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bcrypt-ruby
   bootstrap-colorpicker-rails
   capybara
   chosen-rails
