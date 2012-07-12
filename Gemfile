@@ -7,7 +7,7 @@ gem 'rails', '3.2.6'
 
 gem 'sqlite3'
 gem 'faraday'
-gem 'donors_choose', path: '../donors_choose'
+gem 'donors_choose', :git => 'git://github.com/chrismanderson/donors_choose.git'
 
 
 # Gems used only for assets and not required

@@ -9,6 +9,7 @@ class Project < ActiveRecord::Base
   end
 
   def add_attrs_from_struct api_project
-  	# project
+  	self.project_id = api_project.id
+  	puts self.inspect
   end
 end

@@ -1,5 +1,6 @@
-PATH
-  remote: ../donors_choose
+GIT
+  remote: git://github.com/chrismanderson/donors_choose.git
+  revision: 592a4b59b09c8e00f4a188dd0320a7204eba0d6f
   specs:
     donors_choose (1.1.0)
       json
