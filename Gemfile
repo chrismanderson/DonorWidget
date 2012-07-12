@@ -7,6 +7,8 @@ gem 'rails', '3.2.6'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
+gem 'faraday'
+gem 'donors_choose', :git => 'git://github.com/chrismanderson/donors_choose.git'
 gem 'bcrypt-ruby'
 
 # Gems used only for assets and not required
@@ -28,6 +30,7 @@ group :test, :development do
   gem 'capybara'
   gem 'guard-rspec'
   gem 'faker'
+  gem 'vcr'
 end
 
 group :test do
