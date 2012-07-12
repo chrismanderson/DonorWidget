@@ -1,0 +1,70 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.donorschoose.org/common/json_feed.html?APIKey=DONORSCHOOSE&id=754133
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Content-Language:
+      - en-US
+      Cache-Control:
+      - private, max-age=521
+      Expires:
+      - Thu, 12 Jul 2012 20:44:38 GMT
+      Date:
+      - Thu, 12 Jul 2012 20:35:57 GMT
+      Content-Length:
+      - '2516'
+      Connection:
+      - keep-alive
+      X-N:
+      - S
+    body:
+      encoding: US-ASCII
+      string: ! "\r\n \r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n \r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\t\r\n\r\n\t
+        \ \t\r\n\r\n\r\n\r\n\r\n\r\n{\n  \"searchTerms\": \"Project 754133\",\n  \"searchURL\":
+        \"http://www.donorschoose.org/donors/search.html?id=754133&amp;utm_source=api&amp;utm_medium=feed&amp;utm_content=searchlink&amp;utm_campaign=DONORSCHOOSE\",\n
+        \ \"totalProposals\": \"1\",\n  \"index\": \"0\",\n  \"max\": \"1\",\n  \"proposals\":
+        [{\n    \"id\": \"754133\",\n    \"proposalURL\": \"http://www.donorschoose.org/project/integration-station-creating-daily-sens/754133/?utm_source=api&amp;utm_medium=feed&amp;utm_content=bodylink&amp;utm_campaign=DONORSCHOOSE\",\n
+        \   \"fundURL\": \"https://secure.donorschoose.org/donors/givingCart.html?proposalid=754133&amp;donationAmount=&amp;utm_source=api&amp;utm_medium=feed&amp;utm_content=fundlink&amp;utm_campaign=DONORSCHOOSE\",\n
+        \   \"imageURL\": \"http://cdn.donorschoose.net/images/user/uploads/small/u553127_sm.jpg?timestamp=1293500525169\",\n
+        \   \"title\": \"Integration Station, Creating Daily Sensory Experiences\",\n
+        \   \"shortDescription\": \"Can you imagine trying to sit still, focus and
+        learn when you feel jittery or had too much coffee? My students are not able
+        to calm themselves in a traditional manner.  I am asking for weighted...\",\n
+        \   \"fulfillmentTrailer\": \"My students need materials such as weighted
+        vests, chair balls and a vibrating snake to help integrate sensory processing
+        issues to help them increase attention span and be successful in the learning
+        environment.\",\n    \"percentFunded\": \"100\",\n    \"costToComplete\":
+        \"0.00\",\n    \"matchingFund\": {\n      \"matchingKey\": \"\",\n      \"name\":
+        \"\",\n      \"logoURL\": \"\",\n      \"faqURL\": \"\",\n      \"amount\":
+        \"0.00\"\n    },\n    \"totalPrice\": \"560.40\",\n    \"freeShipping\": \"false\",\n
+        \   \"teacherName\": \"Mrs. Marrs\",\n    \"gradeLevel\": {\n      \"id\":
+        \"1\",\n      \"name\": \"Grades PreK-2\"\n    },\n    \"povertyLevel\": \"High
+        Poverty\",\n    \"schoolName\": \"Blanche E Fuqua Elem School\",\n    \"city\":
+        \"Terre Haute\",\n    \"zip\": \"47802-3832\",\n    \"state\": \"IN\",\n    \"latitude\":
+        \"39.435560000000000\",\n    \"longitude\": \"-87.400630000000000\",\n    \"zone\":
+        {\n      \"id\": \"203\",\n      \"name\": \"Indiana\"\n    },\n    \"subject\":
+        {\n      \"id\": \"23\",\n      \"name\": \"Special Needs\",\n      \"groupId\":
+        \"7\"\n    },\n    \"resource\": {\n      \"id\": \"3\",\n      \"name\":
+        \"Supplies\"\n    },\n    \"expirationDate\": \"2012-07-25\",\n    \"fundingStatus\":
+        \"funded\",\n    \"thankYouAssets\": {\n      \"interimThankYou\": \"\",\n
+        \     \"photos\": [],\n      \"resultsLetter\": \"\"\n    }\n  }]\n}\r\n"
+    http_version: 
+  recorded_at: Thu, 12 Jul 2012 20:35:57 GMT
+recorded_with: VCR 2.2.3

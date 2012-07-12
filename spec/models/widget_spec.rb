@@ -1,22 +1,22 @@
 require 'spec_helper'
 
 describe Widget do
-  it "delegates missing methods to its project" do
-    p = Project.create(title: "Foo")
-    w = p.widgets.create
-    w.title.should == "Foo"
+  use_vcr_cassette
+  before(:each) do
+    @widget = Widget.create!(url: "http://www.donorschoose.org/project/integration-station-creating-daily-sens/754133/")
+  end
+  
+  it "parses its pid from its url" do    
+    @widget.pid.should == "754133"
   end
 
-  it "Returns true for respond_to? when asked about a project method" do
-    p = Project.create(title: "Foo")
-    w = p.widgets.create
-    w.respond_to?(:title).should be_true
+  it "retrieves its title from the DonorsChoose API" do
+    @widget.title.should == "Integration Station, Creating Daily Sensory Experiences"
   end
 
-  it "Raises a method missing error if neither it nor a project respond to a method" do
-    p = Project.create(title: "Foo")
-    w = p.widgets.create
-    expect { w.foo }.should raise_error
+  it "caches data in a Redis store" do
+    @widget.send(:update_cache)
+    @widget.send(:cache_current?).should be_true
   end
 
 end
