@@ -1,3 +1,9 @@
+PATH
+  remote: ../donors_choose
+  specs:
+    donors_choose (1.1.0)
+      json
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -176,6 +182,7 @@ PLATFORMS
 DEPENDENCIES
   capybara
   coffee-rails (~> 3.2.1)
+  donors_choose!
   factory_girl_rails
   faker
   faraday
