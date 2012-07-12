@@ -16,3 +16,4 @@
 //= require_tree .
 //= require chosen-jquery
 //= require bootstrap-colorpicker
+//= require mustache
