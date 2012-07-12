@@ -6,7 +6,7 @@ class Project < ActiveRecord::Base
   	api_project = DonorsChoose::Project.by_url(url)
   	project = Project.new
   	project.add_attrs_from_struct(api_project)
-  	project
+  	project.save
   end
 
   def add_attrs_from_struct api_project
@@ -22,11 +22,18 @@ class Project < ActiveRecord::Base
   	self.cost_to_complete = api_project.costToComplete
   	self.total_price = api_project.totalPrice
   	self.teacher_name = api_project.teacherName
-  	self.grade_level = api_project.gradeLevel
+  	self.grade_level = api_project.gradeLevel['name']
   	self.poverty_level = api_project.povertyLevel
   	self.school = api_project.schoolName
-
-  	puts self.inspect
+  	self.city = api_project.city
+  	self.zip = api_project.zip
+  	self.state = api_project.state
+  	self.latitude = api_project.latitude
+  	self.longitude = api_project.longitude
+  	self.subject = api_project.subject['name']
+  	self.resource = api_project.resource
+  	self.expiration_date = api_project.expirationDate
+  	self.funding_status = api_project.fundingStatus
   end
 
   def raw_url donors_url
