@@ -14,7 +14,7 @@
 ActiveRecord::Schema.define(:version => 20120711181831) do
 
   create_table "projects", :force => true do |t|
-    t.integer  "project_id"
+    t.integer  "pid"
     t.string   "proposal_url"
     t.string   "proposal_raw_url"
     t.string   "fund_url"
