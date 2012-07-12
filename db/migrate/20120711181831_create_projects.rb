@@ -3,7 +3,6 @@ class CreateProjects < ActiveRecord::Migration
     create_table :projects do |t|
       t.integer   :pid
       t.string    :proposal_url
-      t.string    :proposal_raw_url
       t.string    :fund_url
       t.string    :image_url
       t.string    :title
