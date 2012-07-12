@@ -1,0 +1,61 @@
+@import "twitter/bootstrap/bootstrap";
+
+body 					  { padding-top: 60px; background: rgb(32,37,44); color: #fff; }
+#intro div 			{ margin: 150px 0 100px; }
+#intro h1 			{ font-size: 60px; font-weight: 100; }
+#intro h1 span  { font-weight: 500; }
+#intro p 				{ font-size: 40px; font-weight: 100; line-height: 40px; margin-bottom: 40px; }
+.btn-xxxlarge		{ padding: 20px 60px; font-size: 200%; }
+
+div.box					{ min-height: 400px; }
+
+form.well 			{ background-color: #404A59; }
+form label			{ color: #fff; margin-right: 20px; text-align: right; }
+form label, form input[type="text"] { font-size: 20px; display: inline-block; }
+form input[type="text"] { padding: 10px; }
+form input[type="checkbox"] { width: 20px; }
+div.form-group label { width: 135px; }
+.input-append .add-on { height: 30px; width: 30px; margin-left: -4px; }
+.input-append.color .add-on i { height: 30px !important; width: 30px !important; }
+
+.widget					{ border-width: 5px; border-color:#404A59; border-style: solid; border-radius: 7px; padding: 10px;}
+
+h2.school-name	{ margin: 10px auto; width: 50%;}
+
+.donations-bar-wrapper { height: 30px !important; margin: 25px auto;}
+.donations-bar 	{ height: 30px !important;}
+
+.donations 			{ font-size: 22px;}
+.given 					{ font-weight: bold;}
+.needed					{ font-weight: bold;}
+
+.description		{ margin: 15px; font-family: Helvetica; }
+.donate 				{ margin-bottom: 20px;}
+
+
+@import "twitter/bootstrap/responsive";
+
+// Set the correct sprite paths
+@iconSpritePath: asset-path('twitter/bootstrap/glyphicons-halflings.png');
+@iconWhiteSpritePath: asset-path('twitter/bootstrap/glyphicons-halflings-white.png');
+
+// Set the Font Awesome (Font Awesome is default. You can disable by commenting below lines)
+@fontAwesomeEotPath: asset-path('fontawesome-webfont.eot');
+@fontAwesomeWoffPath: asset-path('fontawesome-webfont.woff');
+@fontAwesomeTtfPath: asset-path('fontawesome-webfont.ttf');
+@fontAwesomeSvgzPath: asset-path('fontawesome-webfont.svgz');
+@fontAwesomeSvgPath: asset-path('fontawesome-webfont.svg');
+
+// Font Awesome
+@import "fontawesome";
+
+// Your custom LESS stylesheets goes here
+//
+// Since bootstrap was imported above you have access to its mixins which
+// you may use and inherit here
+//
+// If you'd like to override bootstrap's own variables, you can do so here as well
+// See http://twitter.github.com/bootstrap/less.html for their names and documentation
+//
+// Example:
+// @linkColor: #ff0000;
