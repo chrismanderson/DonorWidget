@@ -3,7 +3,18 @@ class Widget < ActiveRecord::Base
 
   belongs_to :project
   belongs_to :user
-  
+
+  def method_missing(meth, *args, &block)
+    if project.respond_to?(meth)
+      project.send(meth, *args, &block)
+    else
+      super
+    end
+  end
+
+  def respond_to?(meth, include_private = false)
+    self.project.respond_to?(meth) || super
+  end
 end
 
 

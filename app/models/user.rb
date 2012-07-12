@@ -2,7 +2,8 @@ class User < ActiveRecord::Base
   attr_accessible :email, :encrypted_password, :name
   attr_accessor :password
   validates :email, uniqueness: true
-
+  has_many :widgets
+  has_many :projects, through: :widgets
 
   def store_password(new_password)
     update_attribute(:encrypted_password, BCrypt::Password.create(new_password))

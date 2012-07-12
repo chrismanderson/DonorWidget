@@ -1,6 +1,7 @@
 class Project < ActiveRecord::Base
   # attr_accessible :title, :body
-  validates_presence_of :school
+  attr_accessible :title
+  has_many :widgets
 
   def self.create_from_url url
   	api_project = DonorsChoose::Project.by_url(url)
