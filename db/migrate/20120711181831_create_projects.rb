@@ -1,9 +1,8 @@
 class CreateProjects < ActiveRecord::Migration
   def change
     create_table :projects do |t|
-      t.integer   :project_id
+      t.integer   :pid
       t.string    :proposal_url
-      t.string    :proposal_raw_url
       t.string    :fund_url
       t.string    :image_url
       t.string    :title
@@ -18,10 +17,9 @@ class CreateProjects < ActiveRecord::Migration
       t.string    :school
       t.string    :city
       t.integer   :zip
-      t.string    :state_abbr
+      t.string    :state
       t.decimal   :latitude
       t.decimal   :longitude
-      t.string    :state
       t.string    :subject
       t.string    :resource
       t.datetime  :expiration_date

@@ -1,59 +1,50 @@
 <div class="box span7">
 	<form class="well clearfix">
-		<table>
-			<tbody>
-				<tr>
-					<td><label>URL</label></td>
-					<td><input type="text" class="span4" placeholder="Project URL"></td>
-				</tr>
-				<tr>
-					<td><label>Subject</label></td>
-		  		<td>
-		  			<select class="chzn-select chzn-done">
-		  				<option value="0">Choose a subject</option>
-		  				<option value="one">Math</option>
-		  				<option value="two">Reading</option>
-		  				<option value="three">Science</option>
-		  				<option value="four">History</option>
-		  			</select>
-		  		</td>
-		  	</tr>
-				<tr>
-  				<td><label>City</label></td>
-  	  		<td>
-  	  			<select class="chzn-select chzn-done">
-  	  				<option value="0">Choose a city</option>
-  	  				<option value="one">DC</option>
-  	  				<option value="two">Baltimore</option>
-  	  			</select>
-  	  		</td>
-  	  	</tr>
-				<tr>
-					<td><label>Size</label></td>
-		  		<td>
-		  			<select class="chzn-select chzn-done">
-		  				<option value="0">Choose a size</option>
-		  				<option value="one">One</option>
-		  				<option value="two">Two</option>
-		  				<option value="three">Three</option>
-		  				<option value="four">Four</option>
-		  			</select>
-		  		</td>
-		  	</tr>
-		  	<tr>
-					<td><label>Color</label></td>
-		  		<td><input type="text" class="span4 colorpicker" placeholder="Custom color"></td>
-		  	</tr>
-				<tr>
-					<td><label>Code</label></td>
-		  		<td><input type="text" class="span4" placeholder="Code output"></td>
-		  	</tr>
-  			<tr>
-  				<td><label>On Completion</label></td>
-  	  		<td><input type="checkbox" class="span4 pull-left" placeholder="Code output">Display Random</td>
-  	  	</tr>
-		  </tbody>
-		</table>
+		<div class="form-group">
+			<label>URL</label>
+			<input type="text" class="span4" placeholder="Project URL">
+		</div>
+		<div class="form-group">
+			<label>Subject</label>
+			<select class="chzn-select chzn-done">
+				<option value="0">Choose a subject</option>
+				<option value="one">Math</option>
+				<option value="two">Reading</option>
+				<option value="three">Science</option>
+				<option value="four">History</option>
+			</select>
+  	</div>
+		<div class="form-group">
+			<label>City</label>
+			<select class="chzn-select chzn-done">
+				<option value="0">Choose a city</option>
+				<option value="one">DC</option>
+				<option value="two">Baltimore</option>
+			</select>
+  	</div>
+		<div class="form-group">
+			<label>Size</label>
+			<select class="chzn-select chzn-done">
+				<option value="0">Choose a size</option>
+				<option value="one">One</option>
+				<option value="two">Two</option>
+				<option value="three">Three</option>
+				<option value="four">Four</option>
+			</select>
+  	</div>
+  	<div class="form-group input-append color colorpicker" data-color="rgb(255, 146, 180)" data-color-format="hex" id="cp3">
+  		<label>Color</label>
+  	  <input type="text" class="span3" value="" placeholder="Choose a color" >
+  	  <span class="add-on"><i style="background-color: rgb(255, 146, 180)"></i></span>
+  	</div>
+		<div class="form-group">
+			<label>Code</label>
+  		<input type="text" class="span4" placeholder="Code output">
+  	</div>
+		<div class="form-group">
+			<label>On Completion</label>
+  		<input type="checkbox" class="span4 pull-left" placeholder="Code output">Display Random
+  	</div>
 	</form>
 </div>
 <div class="box span4 widget">
