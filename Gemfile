@@ -3,12 +3,14 @@ source 'https://rubygems.org'
 gem 'chosen-rails'
 gem 'rails', '3.2.6'
 
-gem 'mustache-rails'
+gem 'mustache'
 gem 'sqlite3'
 gem 'faraday'
 gem 'donors_choose', :git => 'git://github.com/chrismanderson/donors_choose.git'
 gem 'bcrypt-ruby'
 gem 'redis'
+
+gem 'jbuilder'
 
 group :assets do
 	gem 'bootstrap-colorpicker-rails'
