@@ -48,7 +48,6 @@ class UsersController < ApplicationController
 
   def find_current_user
     @user = current_user
-    raise @user.inspect
     return redirect_to login_path unless @user
   end
 end
