@@ -36,6 +36,10 @@ class Project < ActiveRecord::Base
     }
   end
 
+  def funding_needed
+    total_price - cost_to_complete
+  end
+
   def raw_url donors_url
   	donors_url.split('/')[0..5].join('/')
   end
