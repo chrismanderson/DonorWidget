@@ -1,50 +1,63 @@
 class Widget < ActiveRecord::Base
-  attr_accessible :project_id, :user_id
+  attr_accessible :project_id, :user_id, :url
 
-  belongs_to :project
   belongs_to :user
 
-  def method_missing(meth, *args, &block)
-    if project.respond_to?(meth)
-      project.send(meth, *args, &block)
+  def method_missing(meth, *args, &blk)
+    if project_data.has_key?(meth.to_s)
+      project_data[meth.to_s]
     else
       super
     end
   end
 
-  def respond_to?(meth, include_private = false)
-    self.project.respond_to?(meth) || super
+  def funding_needed
+    total_price.to_f - cost_to_complete.to_f
+  end
+
+  def pid
+    DonorsChoose::Project.parse_id_from_url(url)
+  end  
+
+  private
+
+  def project_data
+    update_cache unless cache_current?
+    JSON.parse(REDIS.get(pid))
+  end
+
+  def cache_current?
+    (JSON.parse(REDIS.get(pid))["cache_expires"].to_datetime >= DateTime.now) rescue false
+  end
+
+  def update_cache
+    project = DonorsChoose::Project.by_url(url)
+    data = {
+      :pid => project.id,
+      :proposal_url => project.proposalURL,
+      :fund_url => project.fundURL,
+      :image_url => project.imageURL,
+      :title => project.title,
+      :short_description => project.shortDescription,
+      :fulfillment_trailer => project.fulfillmentTrailer,
+      :percent_funded => project.percentFunded,
+      :cost_to_complete => project.costToComplete,
+      :total_price => project.totalPrice,
+      :teacher_name => project.teacherName,
+      :grade_level => project.gradeLevel['name'],
+      :poverty_level => project.povertyLevel,
+      :school => project.schoolName,
+      :city => project.city,
+      :zip => project.zip,
+      :state => project.state,
+      :latitude => project.latitude,
+      :longitude => project.longitude,
+      :subject => project.subject['name'],
+      :resource => project.resource['name'],
+      :expiration_date => project.expirationDate,
+      :funding_status => project.fundingStatus,
+      :cache_expires => DateTime.now + 30.seconds
+    }.to_json
+    REDIS.set(pid, data)
   end
 end
-
-
-
- # create_table "projects", :force => true do |t|
- #    t.integer  "project_id"
- #    t.string   "proposal_url"
- #    t.string   "proposal_raw_url"
- #    t.string   "fund_url"
- #    t.string   "image_url"
- #    t.string   "title"
- #    t.string   "short_description"
- #    t.string   "fulfillment_trailer"
- #    t.integer  "percent_funded"
- #    t.decimal  "cost_to_complete"
- #    t.decimal  "total_price"
- #    t.string   "teacher_name"
- #    t.string   "grade_level"
- #    t.string   "poverty_level"
- #    t.string   "school"
- #    t.string   "city"
- #    t.integer  "zip"
- #    t.string   "state_abbr"
- #    t.decimal  "latitude"
- #    t.decimal  "longitude"
- #    t.string   "state"
- #    t.string   "subject"
- #    t.string   "resource"
- #    t.datetime "expiration_date"
- #    t.string   "funding_status"
- #    t.datetime "created_at",          :null => false
- #    t.datetime "updated_at",          :null => false
- #  end

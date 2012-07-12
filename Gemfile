@@ -8,6 +8,7 @@ gem 'sqlite3'
 gem 'faraday'
 gem 'donors_choose', :git => 'git://github.com/chrismanderson/donors_choose.git'
 gem 'bcrypt-ruby'
+gem 'redis'
 
 group :assets do
 	gem 'bootstrap-colorpicker-rails'

@@ -145,6 +145,7 @@ GEM
       ffi (>= 0.5.0)
     rdoc (3.12)
       json (~> 1.4)
+    redis (3.0.1)
     rspec (2.11.0)
       rspec-core (~> 2.11.0)
       rspec-expectations (~> 2.11.0)
@@ -221,6 +222,7 @@ DEPENDENCIES
   mustache-rails
   rack-test
   rails (= 3.2.6)
+  redis
   rspec-rails
   sass-rails (~> 3.2.3)
   simplecov
