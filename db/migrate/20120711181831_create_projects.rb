@@ -15,7 +15,7 @@ class CreateProjects < ActiveRecord::Migration
       t.string    :teacher_name
       t.string    :grade_level
       t.string    :poverty_level
-      t.string    :school_name
+      t.string    :school
       t.string    :city
       t.integer   :zip
       t.string    :state_abbr
