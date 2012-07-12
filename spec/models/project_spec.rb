@@ -9,8 +9,10 @@ describe Project do
   end
 
   context '#create_from_url' do
+    use_vcr_cassette
     it 'creates a project with the right attributes' do
-      
+      Project.create_from_url 'http://www.donorschoose.org/project/dna-mysteries/797331/'
+      Project.first.pid.should == 797331
     end
   end
 end

@@ -1,0 +1,66 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.donorschoose.org/common/json_feed.html?APIKey=DONORSCHOOSE&id=797331
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Content-Language:
+      - en-US
+      Cache-Control:
+      - private, max-age=600
+      Expires:
+      - Thu, 12 Jul 2012 17:54:29 GMT
+      Date:
+      - Thu, 12 Jul 2012 17:44:29 GMT
+      Content-Length:
+      - '2208'
+      Connection:
+      - keep-alive
+      X-N:
+      - S
+    body:
+      encoding: US-ASCII
+      string: ! "\r\n \r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n \r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\t\r\n\r\n\t
+        \ \t\r\n\r\n\r\n\r\n\r\n\r\n{\n  \"searchTerms\": \"Project 797331\",\n  \"searchURL\":
+        \"http://www.donorschoose.org/donors/search.html?id=797331&amp;utm_source=api&amp;utm_medium=feed&amp;utm_content=searchlink&amp;utm_campaign=DONORSCHOOSE\",\n
+        \ \"totalProposals\": \"1\",\n  \"index\": \"0\",\n  \"max\": \"1\",\n  \"proposals\":
+        [{\n    \"id\": \"797331\",\n    \"proposalURL\": \"http://www.donorschoose.org/project/dna-mysteries/797331/?utm_source=api&amp;utm_medium=feed&amp;utm_content=bodylink&amp;utm_campaign=DONORSCHOOSE\",\n
+        \   \"fundURL\": \"https://secure.donorschoose.org/donors/givingCart.html?proposalid=797331&amp;donationAmount=&amp;utm_source=api&amp;utm_medium=feed&amp;utm_content=fundlink&amp;utm_campaign=DONORSCHOOSE\",\n
+        \   \"imageURL\": \"http://cdn.donorschoose.net/images/user/uploads/small/u1468418_sm.jpg?timestamp=1336479618820\",\n
+        \   \"title\": \"DNA Mysteries\",\n    \"shortDescription\": \"It is very
+        unexciting for a student to be required to complete a lab on paper. Real learning
+        comes from doing something authentic. My students are required to know what
+        gel electrophoresis is, but...\",\n    \"fulfillmentTrailer\": \"My students
+        need a lab kit, to run an authentic gel electrophoresis on DNA.\",\n    \"percentFunded\":
+        \"0\",\n    \"costToComplete\": \"879.34\",\n    \"matchingFund\": {\n      \"matchingKey\":
+        \"\",\n      \"name\": \"\",\n      \"logoURL\": \"\",\n      \"faqURL\":
+        \"\",\n      \"amount\": \"0.00\"\n    },\n    \"totalPrice\": \"879.34\",\n
+        \   \"freeShipping\": \"true\",\n    \"teacherName\": \"Mrs. Morris\",\n    \"gradeLevel\":
+        {\n      \"id\": \"3\",\n      \"name\": \"Grades 6-8\"\n    },\n    \"povertyLevel\":
+        \"Low Poverty\",\n    \"schoolName\": \"Commack Middle School\",\n    \"city\":
+        \"Commack\",\n    \"zip\": \"11725\",\n    \"state\": \"NY\",\n    \"latitude\":
+        \"40.820846000000000\",\n    \"longitude\": \"-73.306734000000000\",\n    \"zone\":
+        {\n      \"id\": \"104\",\n      \"name\": \"New York (State)\"\n    },\n
+        \   \"subject\": {\n      \"id\": \"6\",\n      \"name\": \"Applied Sciences\",\n
+        \     \"groupId\": \"4\"\n    },\n    \"resource\": {\n      \"id\": \"3\",\n
+        \     \"name\": \"Supplies\"\n    },\n    \"expirationDate\": \"2012-10-07\",\n
+        \   \"fundingStatus\": \"needs funding\"\n  }]\n}\r\n"
+    http_version: 
+  recorded_at: Thu, 12 Jul 2012 17:44:31 GMT
+recorded_with: VCR 2.2.3

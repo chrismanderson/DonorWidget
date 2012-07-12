@@ -30,6 +30,7 @@ group :test, :development do
   gem 'capybara'
   gem 'guard-rspec'
   gem 'faker'
+  gem 'vcr'
 end
 
 group :test do
