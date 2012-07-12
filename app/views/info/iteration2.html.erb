@@ -1,33 +1,28 @@
 <div class="box span7">
 	<form class="well clearfix">
-		<table>
-			<tbody>
-				<tr>
-					<td><label>URL</label></td>
-					<td><input type="text" class="span5" placeholder="Project URL"></td>
-				</tr>
-				<tr>
-					<td><label>Size</label></td>
-		  		<td>
-		  			<select class="chzn-select chzn-done">
-		  				<option value="0">Choose a size</option>
-		  				<option value="one">One</option>
-		  				<option value="two">Two</option>
-		  				<option value="three">Three</option>
-		  				<option value="four">Four</option>
-		  			</select>
-		  		</td>
-		  	</tr>
-		  	<tr>
-					<td><label>Color</label></td>
-		  		<td><input type="text" class="span5 colorpicker" placeholder="Custom color"></td>
-		  	</tr>
-				<tr>
-					<td><label>Code</label></td>
-		  		<td><input type="text" class="span5" placeholder="Code output"></td>
-		  	</tr>
-		  </tbody>
-		</table>
+		<div class="form-group">
+			<label>URL</label>
+			<input type="text" class="span4" placeholder="Project URL">
+		</div>
+		<div class="form-group">
+			<label>Size</label>
+			<select class="chzn-select chzn-done">
+				<option value="0">Choose a size</option>
+				<option value="one">One</option>
+				<option value="two">Two</option>
+				<option value="three">Three</option>
+				<option value="four">Four</option>
+			</select>
+		</div>
+		<div class="form-group input-append color colorpicker" data-color="rgb(255, 146, 180)" data-color-format="hex" id="cp3">
+			<label>Color</label>
+		  <input type="text" class="span2" value="" >
+		  <span class="add-on"><i style="background-color: rgb(255, 146, 180)"></i></span>
+		</div>
+		<div class="form-group">
+			<label>Code</label>
+		  <input type="text" class="span4" placeholder="Code output">
+		</div>
 	</form>
 </div>
 <div class="box span4 widget">

@@ -4,5 +4,6 @@
 
 $ ->
 	$('.colorpicker').colorpicker().on('changeColor', (ev) ->
-	  bodyStyle.backgroundColor = ev.color.toHex()
+	  newColor = ev.color.toHex()
+	  $('.widget').css('background-color', newColor)
 	  )
