@@ -1,7 +1,6 @@
 
 class Project < ActiveRecord::Base  
   include Projectable
-  validates_presence_of :school
   validates_uniqueness_of :pid
   has_many :widgets
 
