@@ -1,1 +1,1 @@
-json.partial! @project
+json.(@widget, :short_description, :school, :image_url, :percent_funded, :funding_needed, :total_price)

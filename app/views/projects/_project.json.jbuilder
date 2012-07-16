@@ -1,1 +1,0 @@
-json.(project, :short_description, :school, :image_url, :percent_funded, :funding_needed, :total_price)
