@@ -1,6 +1,18 @@
-<%= @widget.title %><br>
-<%= @widget.short_description %><br>
-<%= @widget.url %><br>
-<%= @widget.pid %><br>
-<%= link_to "Index", widgets_path %>
-<%= render partial: 'templates/widget', handler: 'mustache' %>
+<script type="text/javascript">
+  renderWidget = function(widget) {
+    var container;
+    container = $('.widget')[0];
+    return $(container).append(Mustache.to_html($('#widget-template').html(), widget));
+  };
+
+  $(function() {
+    return $.getJSON("/widgets/<%= @widget.id %>", renderWidget);
+  });
+</script>
+
+<div class="widget">
+
+</div>
+<script id='widget-template'>
+	<%= render partial: 'templates/widget', handler: 'mustache' %>
+</script>
