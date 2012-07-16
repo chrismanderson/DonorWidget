@@ -1,7 +1,8 @@
 class Widget < ActiveRecord::Base
   attr_accessible :project_id, :user_id, :url
-
   belongs_to :user
+
+  validates :url, presence: true, uniqueness: true
 
   def method_missing(meth, *args, &blk)
     if project_data.has_key?(meth.to_s)
