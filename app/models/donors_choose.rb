@@ -4,12 +4,13 @@ module DonorsChoose
     end
 
     def self.api_key
-      @api_key || "DONORSCHOOSE"
+      @api_key ||= "DONORSCHOOSE"
     end
 
   class Client
+    DC_API = 'http://api.donorschoose.org/common/json_feed.html'
     def initialize options={}
-      options[:url] ||= 'http://api.donorschoose.org/common/json_feed.html'
+      options[:url] ||= DC_API
       @conn = Faraday.new(url: options[:url])
     end
 
@@ -21,7 +22,6 @@ module DonorsChoose
           req.params[key] = value
         end
       end
-      resp
     end
   end
 end

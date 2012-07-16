@@ -7,7 +7,6 @@ class WidgetsController < ApplicationController
   end
 
   def edit
-
   end
 
   def show
@@ -18,11 +17,9 @@ class WidgetsController < ApplicationController
   end
 
   def update
-  
   end
 
   def delete
-  
   end
 
   def create

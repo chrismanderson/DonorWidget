@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  PASSWORD_LENGTH = 8
+
   attr_accessible :email, :encrypted_password, :name
   attr_accessor :password
   validates :email, uniqueness: true
@@ -27,6 +29,8 @@ class User < ActiveRecord::Base
   end
 
   def generate_random_password
-    Array.new(8).map { (65 + rand(58)).chr }.join
+    pass = ''
+    PASSWORD_LENGTH.times { pass += (rand(58) + 65).chr }
+    pass
   end
 end
