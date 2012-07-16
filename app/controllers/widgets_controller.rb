@@ -10,6 +10,10 @@ class WidgetsController < ApplicationController
   end
 
   def show
+    respond_to do |format|
+      format.html
+      format.json { @widget }
+    end
   end
 
   def update
