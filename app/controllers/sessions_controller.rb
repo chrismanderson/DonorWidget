@@ -9,7 +9,8 @@ class SessionsController < ApplicationController
     if user && user.validate_password(params[:session][:password])
       session[:user_id] = user.id
     else
-      return redirect_to new_session_path, notice: "Username / Password incorrect"
+      flash[:message] = "Username / Password incorrect"
+      return redirect_to new_session_path
     end
   end
 

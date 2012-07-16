@@ -16,23 +16,31 @@ class Widget < ActiveRecord::Base
   end
 
   def pid
-    DonorsChoose::Project.parse_id_from_url(url)
-  end  
+    @pid ||= DonorsChoose::Project.parse_id_from_url(url)
+  end
 
   private
 
+  def data
+    REDIS.get(pid)
+  end
+
+  def data= (new_data)
+    REDIS.set(pid, new_data)
+  end
+
   def project_data
     update_cache unless cache_current?
-    JSON.parse(REDIS.get(pid))
+    JSON.parse(data)
   end
 
   def cache_current?
-    (JSON.parse(REDIS.get(pid))["cache_expires"].to_datetime >= DateTime.now) rescue false
+    (JSON.parse(data)["cache_expires"].to_datetime >= DateTime.now) rescue false
   end
 
   def update_cache
     project = DonorsChoose::Project.by_url(url)
-    data = {
+    self.data = {
       :pid => project.id,
       :proposal_url => project.proposalURL,
       :fund_url => project.fundURL,
@@ -58,6 +66,5 @@ class Widget < ActiveRecord::Base
       :funding_status => project.fundingStatus,
       :cache_expires => DateTime.now + 30.seconds
     }.to_json
-    REDIS.set(pid, data)
   end
 end
