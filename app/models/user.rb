@@ -29,8 +29,6 @@ class User < ActiveRecord::Base
   end
 
   def generate_random_password
-    pass = ''
-    PASSWORD_LENGTH.times { pass += (rand(58) + 65).chr }
-    pass
+    Array.new(PASSWORD_LENGTH).map { (65 + rand(58)).chr }.join
   end
 end
