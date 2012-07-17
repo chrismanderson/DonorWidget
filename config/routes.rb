@@ -14,6 +14,7 @@ DonorsWidget::Application.routes.draw do
   resources :sessions
   resources :users
   resources :widgets
+  resources :widget_steps
   match "/logout" => "sessions#destroy", as: "logout"
   match "/login" => "sessions#new", as: "login"
   match "/reset_password" => "users#reset_password", as: "reset_password"
