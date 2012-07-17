@@ -1,1 +1,1 @@
-json.(@widget, :short_description, :school, :image_url, :percent_funded, :funding_needed, :total_price)
+json.(@widget, :short_description, :school, :image_url, :percent_funded, :funding_needed, :total_price, :formatted_name, :formatted_school, :fund_url, :cost_to_complete)

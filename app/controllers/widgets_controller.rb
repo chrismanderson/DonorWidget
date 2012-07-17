@@ -24,6 +24,7 @@ class WidgetsController < ApplicationController
 
   def create
     @widget = current_user.widgets.create(params[:widget])
+    redirect_to widget_path(@widget)
   end
 
   def new
