@@ -15,6 +15,18 @@ class Widget < ActiveRecord::Base
     total_price.to_f - cost_to_complete.to_f
   end
 
+  def school_split
+    school.split(" ")
+  end
+
+  def formatted_school
+    school_split[-1]
+  end
+
+  def formatted_name
+    school_split[0...-1].join("")
+  end
+
   def pid
     @pid ||= DonorsChoose::Project.parse_id_from_url(url)
   end
