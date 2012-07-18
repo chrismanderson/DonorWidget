@@ -24,7 +24,9 @@ describe User do
     u = User.create
     pw = u.reset_password
     pw.length.should == 8
+    puts pw
     u.validate_password(pw).should be_true
+
     u.reset_password
     u.validate_password(pw).should be_false
   end
