@@ -25,19 +25,19 @@
 </script>
 
 <script type="text/javascript">
-		var widget = document.getElementById("widget-template").innerHTML									;
-		var widgetID = document.getElementsByName("widget_id")[0].getAttribute("content")	;
-		xmlhttp = new XMLHttpRequest()																										;
-		xmlhttp.open("GET", "/widgets/" + widgetID + ".json", false)											;
-		xmlhttp.send()																																		;
-		var response = JSON.parse(xmlhttp.response)																				;
-		var matches = widget.match(/{{(\w+)}}/g)																					;
+		var widget = document.getElementById("widget-template").innerHTML;
+		var widgetID = document.getElementsByName("widget_id")[0].getAttribute("content");
+		xmlhttp = new XMLHttpRequest();
+		xmlhttp.open("GET", "/widgets/" + widgetID + ".json", false);
+		xmlhttp.send();
+		var response = JSON.parse(xmlhttp.response);
+		var matches = widget.match(/{{(\w+)}}/g);
 		for (var i=0; i < matches.length; i++) {
-			var match = matches[i]																													;
-			key = match.replace(/[{}]+/g,'')																								;
+			var match = matches[i];
+			key = match.replace(/[{}]+/g,'');
 			if (response.hasOwnProperty(key)) {
-				widget = widget.replace(new RegExp(match, 'g'), response[key])								;
+				widget = widget.replace(new RegExp(match, 'g'), response[key]);
 			}
 		}
-		document.getElementById('widget').innerHTML = widget															;
+		document.getElementById('widget').innerHTML = widget;
 </script>
