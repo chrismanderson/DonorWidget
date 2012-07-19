@@ -1,7 +1,7 @@
 class WidgetStepsController < ApplicationController
 	include Wicked::Wizard
 
-	steps :customize, :finish
+	steps :size, :color, :finish
 
 	def show
 		@widget = current_user.widgets.last
