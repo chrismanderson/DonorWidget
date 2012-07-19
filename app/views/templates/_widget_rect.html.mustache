@@ -1,0 +1,14 @@
+<link rel="stylesheet" type="text/css" href="/assets/widget-bootstrap.min.css" />
+<div id='donors-choose-widget' class='rect'>
+  <h3 class="school-name">{{formatted_name}}<span>{{formatted_school}}</span></h3>
+  <div class="progress progress-success progress-striped donations-bar-wrapper">
+    <div class="bar donations-bar" style="width: {{percent_funded}}%;"></div>
+  </div>
+  <div class="donations">
+    <span class="needed">${{cost_to_complete}}</span> needed!
+  </div>
+  <a class="donate btn-large btn-danger pull-right" href="{{fund_url}}" target="_blank">Donate</a>
+  <a href="http://donorschoose.org" target="_blank">
+      <img src="http://cdn.donorschoose.net/images/header/donorschoose_org.gif" id="logo" />
+  </a>
+</div>

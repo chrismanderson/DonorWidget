@@ -3,6 +3,8 @@ class Widget < ActiveRecord::Base
 
   belongs_to :user
 
+  validates :url, presence: true, uniqueness: true
+
   def method_missing(meth, *args, &blk)
     if project_data.has_key?(meth.to_s)
       project_data[meth.to_s]
@@ -13,6 +15,18 @@ class Widget < ActiveRecord::Base
 
   def funding_needed
     total_price.to_f - cost_to_complete.to_f
+  end
+
+  def school_split
+    school.split(" ")
+  end
+
+  def formatted_school
+    school_split[-1]
+  end
+
+  def formatted_name
+    school_split[0...-1].join("")
   end
 
   def pid

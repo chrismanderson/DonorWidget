@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   PASSWORD_LENGTH = 8
+  RANDOM_PASSWORD_CHARACTERS = ('a'..'z').to_a + ('A'..'Z').to_a
 
   attr_accessible :email, :encrypted_password, :name
   attr_accessor :password
@@ -29,6 +30,6 @@ class User < ActiveRecord::Base
   end
 
   def generate_random_password
-    Array.new(PASSWORD_LENGTH).map { (65 + rand(58)).chr }.join
+    Array.new(PASSWORD_LENGTH).map { RANDOM_PASSWORD_CHARACTERS.sample }.join
   end
 end

@@ -27,7 +27,7 @@ class WidgetsController < ApplicationController
     if @widget.save
       redirect_to widget_steps_path
     else
-      raise @widget.full_errors.inspect
+      render :new
     end
   end
 
