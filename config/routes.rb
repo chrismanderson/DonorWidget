@@ -12,8 +12,10 @@ DonorsWidget::Application.routes.draw do
   # first created -> highest priority.
 
   resources :sessions
+  resources :embeds
   resources :users
   resources :widgets
+  match '/embeds/string/:id' => 'embeds#to_string'
   match "/logout" => "sessions#destroy", as: "logout"
   match "/login" => "sessions#new", as: "login"
   match "/reset_password" => "users#reset_password", as: "reset_password"

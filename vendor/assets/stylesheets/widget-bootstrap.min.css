@@ -7,11 +7,14 @@
  *
  * Designed and built with all the love in the world @twitter by @mdo and @fat.
  */
+ .pull-left {
+  float: left;
+}
 .clearfix{*zoom:1;}.clearfix:before,.clearfix:after{display:table;content:"";}
 .clearfix:after{clear:both;}
 h2.school-name{margin:0 auto 10px;font-weight: 500;font-size:32px;}
 h2.school-name span, h3.school-name span{font-weight:100;}
-#donors-choose-widget{width: inherit;overflow:hidden;}
+#donors-choose-widget{width: inherit;overflow:hidden; background-color: red}
 #donors-choose-widget img{margin: 0 auto;}
 .med-rect{width:300px;height:250px;}
 .med-rect .donations-bar-wrapper{margin:10px auto;height:25px!important;}
