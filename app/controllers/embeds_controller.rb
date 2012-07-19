@@ -1,8 +1,6 @@
 class EmbedsController < ApplicationController
   def show
     @widget = Widget.find(params[:id])
-    @content = render_to_string(:partial => "embeds/widget", :locals => { :widget => @widget})
-    render :layout => false
   end
 
   def to_string

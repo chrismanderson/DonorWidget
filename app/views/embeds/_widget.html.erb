@@ -1,8 +1,8 @@
 
 
-<div class="widget leaderboard" id="widget">
+<div class="widget <%= @widget.size %>" id="widget">
   <link rel="stylesheet" type="text/css" href="http://localhost:3000/assets/widget-bootstrap.min.css" />
-  <div id='donors-choose-widget' class='leaderboard clearfix'>
+  <div id='donors-choose-widget' class='<%= @widget.size %> clearfix'>
     <div class='pull-left' id="project_img">
       <img src=<%= @widget.image_url %> />
     </div>
