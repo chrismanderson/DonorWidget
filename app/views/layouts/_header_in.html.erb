@@ -2,6 +2,13 @@
   <div class="navbar-inner">
     <div class="container">
       <%= link_to "DonorsWidget", root_path, :class => "brand" %>
+      <div class="nav-collapse">
+	      <ul class="nav pull-right">
+      		<li><a href="">Current user</a></li>
+      		<li class="divider-vertical"></li>
+      		<li><a href=""><%= current_user ? current_user.email : "Logged out." %></a></li>
+	      </ul>
+	    </div>
     </div>
   </div>
 </div>
