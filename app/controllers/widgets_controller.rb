@@ -24,7 +24,11 @@ class WidgetsController < ApplicationController
 
   def create
     @widget = current_user.widgets.create(params[:widget])
-    redirect_to widget_path(@widget)
+    if @widget.save
+      redirect_to widget_steps_path
+    else
+      render :new
+    end
   end
 
   def new

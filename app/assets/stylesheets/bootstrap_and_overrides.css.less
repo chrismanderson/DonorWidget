@@ -14,12 +14,16 @@ form label			{ color: #fff; margin-right: 20px; text-align: right; }
 form label, form input[type="text"] { font-size: 20px; display: inline-block; }
 form input[type="text"] { padding: 10px; margin-bottom: 9px; }
 form input[type="checkbox"] { width: 20px; }
-div.form-group label { width: 135px; }
+div.form-group label { width: auto; }
 .input-append .add-on { height: 30px; width: 30px; margin: -8px 0 0 -4px; }
 .input-append.color .add-on i { height: 30px !important; width: 30px !important; }
 .colorpicker		{ padding: 0 !important; margin: 0 !important; }
 
-.widget					{ border-width: 5px; border-color:#404A59; border-style: solid; border-radius: 7px; padding: 10px; }
+.widget					{ border-width: 5px; border-color:#404A59; border-style: solid; border-radius: 7px; padding: 10px;}
+.size-step			{ margin-bottom:20px;padding-bottom:20px;border-bottom:1px dotted gray;}
+.size-step input:hover {background-color:#61A2D7;}
+.size-step div p{ height:inherit;width:inherit;margin:35% 30%;font-size:25px;}
+.size-step div.leader p 	{ height:inherit;width:inherit;margin:15% 30%; }
 
 .med-rect				{ width: 300px; height: 250px; }
 .rect 					{ width: 180px; height: 150px; }
@@ -40,6 +44,10 @@ h2.school-name	{ margin: 0 auto 10px; font-weight: ; }
 .description		{ margin: 15px; font-family: Helvetica; }
 .donate 				{ margin-bottom: 20px;}
 
+.med-rect{width:300px;height:250px;border:1px solid gray;}
+.rect{width:180px;height:150px;border:1px solid gray;}
+.wide-sky{width:160px;height:600px;border:1px solid gray;}
+.leaderboard{width:728px;height:90px;border:1px solid gray;}
 
 @import "twitter/bootstrap/responsive";
 

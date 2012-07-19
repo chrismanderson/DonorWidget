@@ -1,0 +1,21 @@
+<div class="span6">
+	<%= form_for @widget, url: wizard_path do |f| %>
+		<div class="form-group input-append color colorpicker" data-color="rgb(255, 146, 180)" data-color-format="hex" id="cp3">
+			<label for="widget_background_color">Background Color</label>
+		  <input id="widget_background_color" name="widget[background_color]" type="text" value="" placeholder="Choose a color" >
+		  <span class="add-on"><i style="background-color: rgb(255, 146, 180)"></i></span>
+		</div>	
+		<%= link_to "Previous Step", previous_wizard_path %> or <%= f.submit "Finish", class: "btn btn-primary" %>
+	<% end %>
+</div>
+<% if @widget.size == "leaderboard" %>
+	<div class="span12">
+		<%= content_tag :div, :class=> "widget #{@widget.size}" do %>
+		<% end %>
+	</div>
+<% else %>
+	<div class="span5">
+		<%= content_tag :div, :class=> "widget #{@widget.size}" do %>
+		<% end %>
+	</div>
+<% end %>
