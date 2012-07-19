@@ -1,5 +1,5 @@
 class Widget < ActiveRecord::Base
-  attr_accessible :project_id, :user_id, :url
+  attr_accessible :project_id, :user_id, :url, :size, :bullshit
 
   belongs_to :user
 
