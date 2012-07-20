@@ -51,6 +51,15 @@ class Widget < ActiveRecord::Base
     (JSON.parse(data)["cache_expires"].to_datetime >= DateTime.now) rescue false
   end
 
+  def is_tint?
+    background_color
+    red = background_color[1] + background_color[2]
+    green = background_color[3] + background_color[4]
+    blue = background_color[5] + background_color[6]
+    total = red.to_i(16) + blue.to_i(16) + green.to_i(16)
+    total > 383 ? true : false
+  end
+
   def update_cache
     project = DonorsChoose::Project.by_url(url)
     self.data = {
