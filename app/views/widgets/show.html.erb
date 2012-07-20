@@ -1,11 +1,11 @@
 <%= widget_id_meta %>
-<div class="widget leaderboard" id="widget">
+<div class="widget <%= @widget.size %>" id="widget">
 
 </div>
 
 <script id='widget-template' type='text/widget'>
 	<link rel="stylesheet" type="text/css" href="/assets/widget-bootstrap.min.css" />
-	<div id='donors-choose-widget' class='leaderboard clearfix'>
+	<div id='donors-choose-widget' class="{{size}} clearfix">
 	  <div class='pull-left' id="project_img">
 	    <img src='{{image_url}}' />
 	  </div>
