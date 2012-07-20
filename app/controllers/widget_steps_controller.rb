@@ -21,4 +21,8 @@ class WidgetStepsController < ApplicationController
     @widget.attributes = params[:widget]
     render_wizard @widget
 	end
+
+	def finish_wizard_path
+	  widget_path(@widget)
+	end
 end
