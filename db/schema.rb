@@ -32,5 +32,4 @@ ActiveRecord::Schema.define(:version => 20120716201500) do
     t.datetime "updated_at",       :null => false
     t.text     "url"
   end
-
 end
