@@ -1,17 +1,24 @@
 class WidgetStepsController < ApplicationController
 	include Wicked::Wizard
 
-	steps :size, :color, :finish
+	steps :project, :size, :color, :finish
 
 	def show
-		@widget = current_user.widgets.last
+		@widget = Widget.last
+		case step
+  	when :project
+    	@widget = Widget.new
+  	end
 		render_wizard
 	end
 
 	def update
-		@widget = current_user.widgets.last
+		@widget = Widget.last
+		case step
+		when :project
+    	@widget = Widget.create(params[:widget])
+  	end
     @widget.attributes = params[:widget]
     render_wizard @widget
 	end
-
 end
