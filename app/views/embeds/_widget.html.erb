@@ -13,7 +13,7 @@
     <div class='pull-right' id='donate'>
       <span class="needed"><%= @widget.cost_to_complete %> to go!</span><a class="donate btn-large btn-danger pull-right" href="<%= @widget.fund_url %>" target="_blank">Donate</a>
       <a href="http://donorschoose.org" target="_blank">
-          <img src="http://cdn.donorschoose.net/images/header/donorschoose_org.gif" id="logo" />
+        <%= image_tag("DonorsChoose-org-logo.png", id: "logo") %>
       </a>
     </div>
   </div>
