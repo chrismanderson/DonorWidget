@@ -24,6 +24,7 @@ h2.school-name span, h3.school-name span{font-weight:100;}
 .rect .donations-bar-wrapper{margin:15px auto 8px;height:25px!important;}
 .rect .donations{margin-bottom:15px;}
 .rect .donations span{font-size:20px;}
+.rect div#product_img,.rect div#product_img img{display:none;}
 .rect img#logo{width:100px;height:15px;margin-top:6px;}
 .wide-sky{width:160px;height:600px;}
 .wide-sky h2.school-name{font-size:25px;}
