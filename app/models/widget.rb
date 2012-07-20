@@ -1,8 +1,11 @@
 class Widget < ActiveRecord::Base
+<<<<<<< HEAD
   attr_accessible :project_id, :user_id, :url, :size, :background_color
 
+=======
+  attr_accessible :project_id, :user_id, :url, :size
+>>>>>>> fe004acfd77e0d8b7d0f855b93504bba99284ee3
   belongs_to :user
-
   validates :url, presence: true, uniqueness: true
 
   def method_missing(meth, *args, &blk)
