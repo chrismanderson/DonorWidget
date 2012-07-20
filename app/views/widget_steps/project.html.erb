@@ -1,0 +1,12 @@
+<div class="span12">
+  <h1>Paste a project URL:</h1>
+  <%= form_for @widget, url: wizard_path, method: :put do |f| %>
+  <div class="row">
+    <%= f.label :url, "Project URL" %>
+    <%= f.text_field :url, size: 20 %>
+  </div>
+  <div class="row">
+    <%= f.submit nil, class: "btn btn-primary" %>
+  </div>
+  <% end %>
+</div>
