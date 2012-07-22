@@ -1,0 +1,37 @@
+<div class="span12">
+	<h1>Choose a size:</h1>
+	<%= form_for @widget, url: wizard_path do |f| %>
+	<div class="row size-step">
+		<div class="span3">
+			<p>300x250</p>
+		</div>
+		<div class="span3">
+			<input id="widget_size_med-rect" name="widget[size]" type="image" value="med-rect" class="med-rect" />
+		</div>
+	</div>
+	<div class="row size-step">
+		<div class="span3">
+			<p>180x150</p>
+		</div>
+		<div class="span3">
+			<input id="widget_size_rect" name="widget[size]" type="image" value="rect" class="rect" />
+		</div>
+	</div>
+	<div class="row size-step">
+		<div class="span3">
+			<p>160x600</p>
+		</div>
+		<div class="span3">
+			<input id="widget_size_wide-sky" name="widget[size]" type="image" value="wide-sky" class="wide-sky" />
+		</div>
+	</div>
+	<div class="row size-step">
+		<div class="span3 leader">
+			<p>728x90</p>
+		</div>
+		<div class="span3">
+			<input id="widget_size_leaderboard" name="widget[size]" type="image" value="leaderboard" class="leaderboard" />
+		</div>
+	</div>
+	<% end %>
+</div>

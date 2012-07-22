@@ -1,0 +1,20 @@
+<%= render partial: 'widget_css' %>
+<div class="widget <%= @widget.size %>" id="widget">
+  <div id='donors-choose-widget' class='<%= @widget.size %> clearfix'>
+    <div class='pull-left' id="project_img">
+      <img src=<%= @widget.image_url %> />
+    </div>
+    <div class='pull-left'>
+      <h2 class="school-name"><%= @widget.formatted_name %><span><%= @widget.formatted_school %></span></h2>
+      <div class="progress progress-success progress-striped donations-bar-wrapper">
+        <div class="bar donations-bar" style="width: <%= @widget.percent_funded %>%;"></div>
+      </div>
+    </div>
+    <div class='pull-right' id='donate'>
+      <span class="needed"><%= @widget.cost_to_complete %> to go!</span><a class="donate btn-large btn-danger pull-right" href="<%= @widget.fund_url %>" target="_blank">Donate</a>
+      <a href="http://donorschoose.org" target="_blank">
+        <%= image_tag("DonorsChoose-org-logo.png", id: "logo") %>
+      </a>
+    </div>
+  </div>
+</div>
