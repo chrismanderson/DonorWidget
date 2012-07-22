@@ -1,6 +1,7 @@
 class EmbedsController < ApplicationController
   def show
     @widget = Widget.find(params[:id])
+    @widget.showings.create!
   end
 
   def to_string

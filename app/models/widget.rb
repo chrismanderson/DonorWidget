@@ -2,7 +2,17 @@ class Widget < ActiveRecord::Base
   attr_accessible :project_id, :user_id, :url, :size, :background_color
 
   belongs_to :user
-  validates :url, presence: true, uniqueness: true
+  validates :url, presence: true
+  has_many :clicks
+  has_many :showings
+
+  def total_clicks
+    clicks.count
+  end
+
+  def total_showings
+    showings.count
+  end
 
   def method_missing(meth, *args, &blk)
     if project_data.has_key?(meth.to_s)
