@@ -9,16 +9,16 @@ gem 'faraday'
 gem 'donors_choose', :git => 'git://github.com/chrismanderson/donors_choose.git'
 gem 'bcrypt-ruby'
 gem 'redis'
-
+gem 'bootstrap-colorpicker-rails'
 gem 'jbuilder'
 
-group :assets do
+# group :assets do
 	gem 'bootstrap-colorpicker-rails'
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
 	gem 'twitter-bootstrap-rails'
   gem 'uglifier', '>= 1.0.3'
-end
+# end
 
 group :test, :development do
   gem 'rspec-rails'
