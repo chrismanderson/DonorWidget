@@ -4,7 +4,7 @@ gem 'chosen-rails'
 gem 'rails', '3.2.6'
 
 gem 'mustache'
-gem 'sqlite3'
+gem 'pg'
 gem 'faraday'
 gem 'donors_choose', :git => 'git://github.com/chrismanderson/donors_choose.git'
 gem 'bcrypt-ruby'
@@ -27,6 +27,7 @@ group :test, :development do
   gem 'guard-rspec'
   gem 'faker'
   gem 'vcr'
+  gem 'sqlite3'
 end
 
 group :test do
