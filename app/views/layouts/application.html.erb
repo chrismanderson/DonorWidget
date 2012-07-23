@@ -8,9 +8,9 @@
 </head>
 <body>
 	<%= render 'layouts/header_in' %>
-<div class="container">
-<%= flash[:notice] if flash.any? %>
-<%= yield %>
-</div>
+  <div class="container">
+    <%= flash[:notice] if flash.any? %>
+    <%= yield %>
+  </div>
 </body>
 </html>

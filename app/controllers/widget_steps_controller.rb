@@ -1,28 +1,27 @@
 class WidgetStepsController < ApplicationController
-	include Wicked::Wizard
+  include Wicked::Wizard
 
-	steps :project, :size, :color, :finish
+  steps :project, :size, :color, :finish
 
-	def show
-		@widget = Widget.last
-		case step
-  	when :project
-    	@widget = Widget.new
-  	end
-		render_wizard
-	end
+  def show
+    @widget = (step == :project) ?
+      Widget.new :
+      Widget.find_by_id(cookies[:widget_id])
+    render_wizard
+  end
 
-	def update
-		@widget = Widget.last
-		case step
-		when :project
-    	@widget = Widget.create(params[:widget])
-  	end
-    @widget.attributes = params[:widget]
+  def update
+    @widget = (step == :project) ?
+      Widget.create(params[:widget]) :
+      Widget.find_by_id(cookies[:widget_id]).tap do |w|
+        w.attributes = params[:widget]
+        w.save
+    end
+    cookies[:widget_id] = @widget.id
     render_wizard @widget
-	end
+  end
 
-	def finish_wizard_path
-	  widget_path(@widget)
-	end
+  def finish_wizard_path
+    widget_path(@widget)
+  end
 end

@@ -1,0 +1,44 @@
+<% @widget = widget %>
+<%= widget_id_meta %>
+<div class="widget <%= @widget.size %>" id="widget-<%= @widget.id %>">
+
+</div>
+
+<script id='widget-template' type='text/widget'>
+  <%= render partial: 'embeds/widget_css' %>
+  <div id='donors-choose-widget' class='<%= @widget.size %> clearfix'>
+    <div class='pull-left' id="project_img">
+      <img src='{{image_url}}' />
+    </div>
+    <div class='pull-left'>
+      <h2 class="school-name">{{formatted_name}}<span>{{formatted_school}}</span></h2>
+      <div class="progress progress-success progress-striped donations-bar-wrapper">
+        <div class="bar donations-bar" style="width: {{percent_funded}}%;"></div>
+      </div>
+    </div>
+    <div class='pull-right' id='donate'>
+      <span class="needed">${{cost_to_complete}} to go!</span><a class="donate btn-large btn-danger pull-right" href="{{url}}" target="_blank">Donate</a>
+      <a href="http://donorschoose.org" target="_blank">
+        <%= image_tag("DonorsChoose-org-logo.png", id: "logo") %>
+      </a>
+    </div>
+  </div>
+</script>
+
+<script type="text/javascript">
+    var widget = document.getElementById("widget-template").innerHTML;
+    var widgetID = <%= @widget.id %>;
+    xmlhttp = new XMLHttpRequest();
+    xmlhttp.open("GET", "/widgets/" + widgetID + ".json", false);
+    xmlhttp.send();
+    var response = JSON.parse(xmlhttp.response);
+    var matches = widget.match(/{{(\w+)}}/g);
+    for (var i=0; i < matches.length; i++) {
+      var match = matches[i];
+      key = match.replace(/[{}]+/g,'');
+      if (response.hasOwnProperty(key)) {
+        widget = widget.replace(new RegExp(match, 'g'), response[key]);
+      }
+    }
+    document.getElementById('widget-<%= @widget.id %>').innerHTML = widget;
+</script>

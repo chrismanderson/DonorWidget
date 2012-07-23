@@ -2,9 +2,8 @@
 <div class="widget <%= @widget.size %>" id="widget">
 
 </div>
-
+<%= render partial: 'embeds/widget_css' %>
 <script id='widget-template' type='text/widget'>
-	<%= render partial: 'embeds/widget_css' %>
 	<div id='donors-choose-widget' class='<%= @widget.size %> clearfix'>
 	  <div class='pull-left' id="project_img">
 	    <img src='{{image_url}}' />

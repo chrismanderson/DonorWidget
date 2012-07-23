@@ -1,7 +1,6 @@
 class Widget < ActiveRecord::Base
-  attr_accessible :project_id, :user_id, :url, :size, :background_color
+  attr_accessible :project_id, :url, :size, :background_color
 
-  belongs_to :user
   validates :url, presence: true
   has_many :clicks
   has_many :showings
@@ -62,7 +61,6 @@ class Widget < ActiveRecord::Base
   end
 
   def is_tint?
-    background_color
     red = background_color[1] + background_color[2]
     green = background_color[3] + background_color[4]
     blue = background_color[5] + background_color[6]
