@@ -6,7 +6,9 @@
 <p>Copy and paste this code into your website's HTML to embed this widget on your page:</p>
 <div id="widgettest" class='btn'>Copy to clipboard</div><br><br><pre id="embed-code"><%= @widget.embed_code %></pre>
 <br>
-<p>Track this widget here! <%= widget_url(@widget) %></p>
+<p>This widget has been displayed <%= @widget.total_showings %> times, and has been
+	clicked on <%= @widget.total_clicks %> times.</p>
+<p>Track this widget's stats here! <%= widget_url(@widget) %></p>
 
 
 <%= render partial: 'embeds/widget_css' %>
