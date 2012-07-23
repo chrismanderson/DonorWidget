@@ -16,7 +16,7 @@ class Widget < ActiveRecord::Base
   end
 
   def embed_code
-    "<script type='text/javascript' src=#{embed_url(self, format: :js, host: "localhost:3000")}></script>"
+    "<script type='text/javascript' src='#{embed_url(self, format: :js, host: "localhost:3000")}'></script>"
   end
 
   def method_missing(meth, *args, &blk)
