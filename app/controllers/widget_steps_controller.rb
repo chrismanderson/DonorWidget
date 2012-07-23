@@ -1,6 +1,8 @@
 class WidgetStepsController < ApplicationController
   include Wicked::Wizard
 
+  layout "wizard"
+
   steps :project, :size, :color, :finish
 
   def show

@@ -12,6 +12,8 @@ gem 'bcrypt-ruby'
 gem 'redis'
 gem 'bootstrap-colorpicker-rails'
 gem 'jbuilder'
+gem 'rack-pjax'
+gem 'goose'
 
 # group :assets do
 	gem 'bootstrap-colorpicker-rails'
