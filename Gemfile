@@ -1,5 +1,4 @@
 source 'https://rubygems.org'
-
 gem 'chosen-rails'
 gem 'rails', '3.2.6'
 gem 'wicked'
