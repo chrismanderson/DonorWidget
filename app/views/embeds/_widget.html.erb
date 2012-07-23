@@ -7,7 +7,7 @@
     <div class='pull-left'>
       <h2 class="school-name"><%= @widget.formatted_name %><span><%= @widget.formatted_school %></span></h2>
       <% if @widget.is_funded? %>
-        <div class="status">
+        <div class="status completed">
           Project funded!
         </div>
         <a class="donate btn-large btn-danger pull-right" href="http://donorschoose.org">Find another project!</a>
@@ -26,6 +26,5 @@
     </div>
       <% end %>
     </div>
-    
   </div>
 </div>
