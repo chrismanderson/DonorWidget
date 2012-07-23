@@ -5,8 +5,6 @@ function registerClick(widget) {
   console.log("hello");
   xmlhttp.open("POST", "http://localhost:3000/clicks", false);
   xmlhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-  xmlhttp.setRequestHeader('Content-length', widgetID.length);
-  xmlhttp.setRequestHeader('Connection', 'close');
 
   console.log("goodbye");
   xmlhttp.send(widgetID);
