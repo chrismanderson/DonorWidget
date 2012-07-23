@@ -1,7 +1,8 @@
 class EmbedsController < ApplicationController
   def show
-    @widget = Widget.find(cookies[:widget_id])
+    @widget = Widget.find(params[:id])
     @widget.showings.create!
+    render layout: false
   end
 
   def to_string

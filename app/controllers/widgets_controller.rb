@@ -38,7 +38,6 @@ class WidgetsController < ApplicationController
   private
 
   def find_widget
-    @widget = Widget.find_by_id(cookies[:widget_id])
+    @widget = Widget.find_by_id(params[:id])
   end
-
 end

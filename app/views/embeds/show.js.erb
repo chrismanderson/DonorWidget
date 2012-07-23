@@ -1,1 +1,12 @@
+function registerClick(widget) {
+  var xmlhttp = new XMLHttpRequest();
+  widgetID = "widget_id=" + widget.getAttribute('data-id');
+  xmlhttp.open("POST", "http://localhost:3000/clicks", false);
+  xmlhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+
+  xmlhttp.send(widgetID);
+}
+
 document.write("<%= escape_javascript(render(:partial => 'widget', :locals => {:widget => @widget})).html_safe %>");
+var widget = document.getElementById("donate_button");
+widget.addEventListener("click", function() {registerClick(widget)}, false);
