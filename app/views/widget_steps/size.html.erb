@@ -2,36 +2,37 @@
 <div class="span12">
 	<h1>Choose a size:</h1>
 	<%= form_for @widget, url: wizard_path do |f| %>
+	<%= render partial: 'embeds/widget_css' %>
 	<div class="row size-step">
 		<div class="span3">
-			<p>300x250</p>
+			<p class="size-label">300x250<%= f.radio_button :size, "med-rect" %></p>
 		</div>
 		<div class="span3">
-			<input id="widget_size_med-rect" name="widget[size]" type="image" value="med-rect" class="med-rect pjax" />
+			<%= render partial: "templates/widget_med-rect", locals: {:widget => @widget} %>
 		</div>
 	</div>
 	<div class="row size-step">
 		<div class="span3">
-			<p>180x150</p>
+			<p class="size-label">180x150<%= f.radio_button :size, "rect" %></p>
 		</div>
 		<div class="span3">
-			<input id="widget_size_rect" name="widget[size]" type="image" value="rect" class="rect pjax" />
+			<%= render partial: "templates/widget_rect", locals: {:widget => @widget} %>
 		</div>
 	</div>
 	<div class="row size-step">
 		<div class="span3">
-			<p>160x600</p>
+			<p class="size-label">160x600<%= f.radio_button :size, "wide-sky" %></p>
 		</div>
 		<div class="span3">
-			<input id="widget_size_wide-sky" name="widget[size]" type="image" value="wide-sky" class="wide-sky pjax" />
+			<%= render partial: "templates/widget_wide-sky", locals: {:widget => @widget} %>
 		</div>
 	</div>
 	<div class="row size-step">
 		<div class="span3 leader">
-			<p>728x90</p>
+			<p class="size-label">728x90<%= f.radio_button :size, "leaderboard" %></p>
 		</div>
 		<div class="span3">
-			<input id="widget_size_leaderboard" name="widget[size]" type="image" value="leaderboard" class="leaderboard pjax" />
+			<%= render partial: "templates/widget_leaderboard", locals: {:widget => @widget} %>
 		</div>
 	</div>
 	<% end %>

@@ -4,3 +4,6 @@
 
 jQuery ->
   $('.pjax').pjax('[data-pjax-container]')
+  $(':radio').live('change', ->
+    $(this).closest('form.edit_widget').submit()
+  )

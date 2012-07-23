@@ -1,0 +1,17 @@
+<div class="dc-med-rect">
+  <div id='dc-donors-choose-widget' class='med-rect'>
+    <h2 class="dc-school-name"><%= @widget.formatted_name %><span><%= @widget.formatted_school %></span></h2>
+    <p class="dc-description"><%= @widget.short_description %></p>
+    <div class="progress progress-success progress-striped dc-donations-bar-wrapper">
+      <div class="bar donations-bar" style="width: <%= @widget.percent_funded %>%;"></div>
+    </div>
+    <div class="dc-donations">
+      <span class="dc-given">$<%= @widget.funding_needed %></span>
+       of <span class="dc-needed">$<%= @widget.total_price %></span> donated!
+    </div>
+    <a class="dc-donate btn-large btn-danger pull-right" href="<%= @widget.fund_url %>" target="_blank">Donate</a>
+    <a href="http://donorschoose.org" target="_blank" class="pull-left">
+      <img alt="Donorschoose-org-logo" id="dc-logo" src="/assets/DonorsChoose-org-logo.png">
+    </a>
+  </div>
+</div>
