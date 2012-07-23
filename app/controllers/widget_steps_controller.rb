@@ -4,21 +4,20 @@ class WidgetStepsController < ApplicationController
   steps :project, :size, :color, :finish
 
   def show
-    @widget = Widget.last
-    case step
-    when :project
-      @widget = Widget.new
-    end
+    @widget = (step == :project) ?
+      Widget.new :
+      Widget.find_by_id(cookies[:widget_id])
     render_wizard
   end
 
   def update
-    @widget = Widget.last
-    case step
-    when :project
-      @widget = Widget.create(params[:widget])
+    @widget = (step == :project) ?
+      Widget.create(params[:widget]) :
+      Widget.find_by_id(cookies[:widget_id]).tap do |w|
+        w.attributes = params[:widget]
+        w.save
     end
-    @widget.attributes = params[:widget].merge({user_id: current_user.id})
+    cookies[:widget_id] = @widget.id
     render_wizard @widget
   end
 

@@ -25,6 +25,7 @@ class WidgetsController < ApplicationController
   def create
     @widget = current_user.widgets.create(params[:widget])
     if @widget.save
+      cookies[:widget_id] = @widget.id
       redirect_to widget_steps_path
     else
       render :new
@@ -38,7 +39,7 @@ class WidgetsController < ApplicationController
   private
 
   def find_widget
-    @widget = current_user.widgets.find(params[:id])
+    @widget = Widget.find_by_id(cookies[:widget_id])
   end
 
 end
