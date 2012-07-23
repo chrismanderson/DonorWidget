@@ -35,13 +35,13 @@ ActiveRecord::Schema.define(:version => 20120722185237) do
 
   create_table "widgets", :force => true do |t|
     t.integer  "user_id"
-    t.string   "url"
+    t.text     "url",              :limit => 255
     t.string   "background_color"
     t.string   "size"
     t.string   "rollover_method"
     t.boolean  "archived"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
   end
 
 end
