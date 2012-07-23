@@ -1,4 +1,6 @@
 class Widget < ActiveRecord::Base
+  include Rails.application.routes.url_helpers
+
   attr_accessible :project_id, :url, :size, :background_color
 
   validates :url, presence: true
@@ -11,6 +13,10 @@ class Widget < ActiveRecord::Base
 
   def total_showings
     showings.count
+  end
+
+  def embed_code
+    "<script type='text/javascript' src=#{embed_url(self, format: :js, host: "localhost:3000")}></script>"
   end
 
   def method_missing(meth, *args, &blk)
