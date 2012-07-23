@@ -1,5 +1,4 @@
 class WidgetsController < ApplicationController
-  before_filter :login_required
   before_filter :find_widget, only: [:edit, :show, :update, :delete]
 
   def index
@@ -23,7 +22,7 @@ class WidgetsController < ApplicationController
   end
 
   def create
-    @widget = current_user.widgets.create(params[:widget])
+    @widget = Widget.create(params[:widget])
     if @widget.save
       cookies[:widget_id] = @widget.id
       redirect_to widget_steps_path
