@@ -4,18 +4,18 @@
 			<label for="widget_background_color">Background Color</label>
 		  <input id="widget_background_color" name="widget[background_color]" type="text" value="" placeholder="Choose a color" >
 		  <span class="add-on"><i style="background-color: rgb(255, 146, 180)"></i></span>
-		</div>	
-		<%= link_to "Previous Step", previous_wizard_path %> or <%= f.submit "Finish", class: "btn btn-primary" %>
+		</div>
+		<%= link_to "Previous Step", previous_wizard_path %> or <%= f.submit "Finish", class: "btn btn-success" %>
 	<% end %>
 </div>
 <% if @widget.size == "leaderboard" %>
 	<div class="span12">
-		<%= content_tag :div, :class=> "widget #{@widget.size}" do %>
+		<%= content_tag :div, :class=> "widget #{@widget.size} widget-preview" do %>
 		<% end %>
 	</div>
 <% else %>
 	<div class="span5">
-		<%= content_tag :div, :class=> "widget #{@widget.size}" do %>
+		<%= content_tag :div, :class=> "widget #{@widget.size} widget-preview" do %>
 		<% end %>
 	</div>
 <% end %>
