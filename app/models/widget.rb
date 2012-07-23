@@ -104,7 +104,7 @@ class Widget < ActiveRecord::Base
       :resource => project.resource['name'],
       :expiration_date => project.expirationDate,
       :funding_status => project.fundingStatus,
-      :cache_expires => DateTime.now + 30.seconds
+      :cache_expires => DateTime.now + 300.seconds
     }.to_json
   end
 end

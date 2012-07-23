@@ -2,6 +2,13 @@
 <div class="widget <%= @widget.size %>" id="widget">
 
 </div>
+
+<p>Copy and paste this code into your website's HTML to embed this widget on your page:</p>
+<div id="widgettest" class='btn'>Copy to clipboard</div><br><br><pre id="embed-code"><%= @widget.embed_code %></pre>
+<br>
+<p>Track this widget here! <%= widget_url(@widget) %></p>
+
+
 <%= render partial: 'embeds/widget_css' %>
 <script id='widget-template' type='text/widget'>
 	<div id='donors-choose-widget' class='<%= @widget.size %> clearfix'>
@@ -39,10 +46,11 @@
 			}
 		}
 		document.getElementById('widget').innerHTML = widget;
+
+		$('#widgettest').zclip({
+        path:"<%= asset_path('ZeroClipboard.swf') %>",
+        copy:$('#embed-code').text()
+    });
 </script>
 
 
-<p>Copy and paste this code into your website's HTML to embed this widget on your page:</p>
-<p><pre><%= @widget.embed_code %></pre></p>
-<br>
-<p>Track this widget here! <%= widget_url(@widget) %></p>
