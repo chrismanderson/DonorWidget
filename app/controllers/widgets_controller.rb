@@ -40,5 +40,4 @@ class WidgetsController < ApplicationController
   def find_widget
     @widget = current_user.widgets.find(params[:id])
   end
-
 end

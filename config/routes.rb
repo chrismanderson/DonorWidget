@@ -13,6 +13,7 @@ DonorsWidget::Application.routes.draw do
 
   resources :sessions
   resources :embeds
+  resources :clicks
   resources :users
   resources :widgets
   resources :widget_steps
