@@ -3,7 +3,7 @@ class WidgetsController < ApplicationController
   before_filter :find_widget, only: [:edit, :show, :update, :delete]
 
   def index
-    @widgets = current_user.widgets
+    @widgets = Widget.all
   end
 
   def edit
