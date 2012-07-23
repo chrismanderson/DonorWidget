@@ -16,7 +16,7 @@ class Widget < ActiveRecord::Base
   end
 
   def embed_code
-    "<script type='text/javascript' src=#{embed_url(self, format: :js, host: "localhost:3000")}></script>"
+    "<script type='text/javascript' src='#{embed_url(self, format: :js, host: "localhost:3000")}'></script>"
   end
 
   def method_missing(meth, *args, &blk)
@@ -104,7 +104,7 @@ class Widget < ActiveRecord::Base
       :resource => project.resource['name'],
       :expiration_date => project.expirationDate,
       :funding_status => project.fundingStatus,
-      :cache_expires => DateTime.now + 30.seconds
+      :cache_expires => DateTime.now + 300.seconds
     }.to_json
   end
 end
