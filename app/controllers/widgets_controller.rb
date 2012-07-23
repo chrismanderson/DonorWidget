@@ -1,9 +1,8 @@
 class WidgetsController < ApplicationController
-  before_filter :login_required
   before_filter :find_widget, only: [:edit, :show, :update, :delete]
 
   def index
-    @widgets = current_user.widgets
+    @widgets = Widget.all
   end
 
   def edit
@@ -23,7 +22,7 @@ class WidgetsController < ApplicationController
   end
 
   def create
-    @widget = current_user.widgets.create(params[:widget])
+    @widget = Widget.create(params[:widget])
     if @widget.save
       redirect_to widget_steps_path
     else
@@ -38,7 +37,7 @@ class WidgetsController < ApplicationController
   private
 
   def find_widget
-    @widget = current_user.widgets.find(params[:id])
+    @widget = Widget.find(params[:id])
   end
 
 end
