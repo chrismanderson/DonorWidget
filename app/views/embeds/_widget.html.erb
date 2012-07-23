@@ -10,13 +10,13 @@
         <div class="status">
           Project funded!
         </div>
+        <a class="donate btn-large btn-danger pull-right" href="http://donorschoose.org">Find another project!</a>
+      </div>
       <% else %>
         <div class="progress progress-success progress-striped donations-bar-wrapper">
           <div class="bar donations-bar" style="width: <%= @widget.percent_funded %>%;"></div>
-        </div>
-      <% end %>
-    </div>
-    <div class='pull-right' id='donate'>
+        </div></div>
+        <div class='pull-right' id='donate'>
       <span class="needed"><%= @widget.cost_to_complete %> to go!</span><a class="donate btn-large btn-danger pull-right" href="<%= @widget.fund_url %>" 
       data-id="<%= @widget.id %>"
       id="donate_button" target="_blank">Donate</a>
@@ -24,5 +24,8 @@
         <%= image_tag("DonorsChoose-org-logo.png", id: "logo") %>
       </a>
     </div>
+      <% end %>
+    </div>
+    
   </div>
 </div>
