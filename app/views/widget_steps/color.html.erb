@@ -1,4 +1,5 @@
 <%= nav_at 'Customize Color' %>
+<%= widget_id_meta %>
 <div class="span6">
 	<%= form_for @widget, url: wizard_path do |f| %>
 		<div class="form-group input-append color colorpicker" data-color="rgb(255, 146, 180)" data-color-format="hex" id="cp3">
@@ -11,12 +12,50 @@
 </div>
 <% if @widget.size == "leaderboard" %>
 	<div class="span12">
-		<%= content_tag :div, :class=> "widget #{@widget.size} widget-preview" do %>
+		<%= content_tag :div, class: "widget #{@widget.size} widget-preview", id: 'widget' do %>
 		<% end %>
 	</div>
 <% else %>
 	<div class="span5">
-		<%= content_tag :div, :class=> "widget #{@widget.size} widget-preview" do %>
+		<%= content_tag :div, :class=> "widget #{@widget.size} widget-preview", id: 'widget' do %>
 		<% end %>
 	</div>
 <% end %>
+<%= render partial: 'embeds/widget_css' %>
+<script id='widget-template' type='text/widget'>
+	<div id='donors-choose-widget' class='<%= @widget.size %> clearfix'>
+	  <div class='pull-left' id="project_img">
+	    <img src='{{image_url}}' />
+	  </div>
+	  <div class='pull-left'>
+	    <h2 class="school-name">{{formatted_name}}<span>{{formatted_school}}</span></h2>
+	    <div class="progress progress-success progress-striped donations-bar-wrapper">
+	      <div class="bar donations-bar" style="width: {{percent_funded}}%;"></div>
+	    </div>
+	  </div>
+	  <div class='pull-right' id='donate'>
+	    <span class="needed">${{cost_to_complete}} to go!</span><a class="donate btn-large btn-danger pull-right" href="{{url}}" target="_blank">Donate</a>
+	    <a href="http://donorschoose.org" target="_blank">
+	    	<%= image_tag("DonorsChoose-org-logo.png", id: "logo") %>
+	    </a>
+	  </div>
+	</div>
+</script>
+
+<script type="text/javascript">
+		var widget = document.getElementById("widget-template").innerHTML;
+		var widgetID = document.getElementsByName("widget_id")[0].getAttribute("content");
+		xmlhttp = new XMLHttpRequest();
+		xmlhttp.open("GET", "/widgets/" + widgetID + ".json", false);
+		xmlhttp.send();
+		var response = JSON.parse(xmlhttp.response);
+		var matches = widget.match(/{{(\w+)}}/g);
+		for (var i=0; i < matches.length; i++) {
+			var match = matches[i];
+			key = match.replace(/[{}]+/g,'');
+			if (response.hasOwnProperty(key)) {
+				widget = widget.replace(new RegExp(match, 'g'), response[key]);
+			}
+		}
+		document.getElementById('widget').innerHTML = widget;
+</script>
