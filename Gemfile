@@ -4,6 +4,7 @@ gem 'chosen-rails'
 gem 'rails', '3.2.6'
 gem 'wicked'
 gem 'mustache'
+gem 'simplecov', :require => false, :group => :test
 gem 'pg'
 gem 'faraday'
 gem 'donors_choose', :git => 'git://github.com/chrismanderson/donors_choose.git'
