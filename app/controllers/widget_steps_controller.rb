@@ -18,7 +18,7 @@ class WidgetStepsController < ApplicationController
     when :project
       @widget = Widget.create(params[:widget])
     end
-    @widget.attributes = params[:widget].merge({user_id: current_user.id})
+    @widget.attributes = params[:widget]
     render_wizard @widget
   end
 

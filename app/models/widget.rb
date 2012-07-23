@@ -1,5 +1,5 @@
 class Widget < ActiveRecord::Base
-  attr_accessible :project_id, :user_id, :url, :size, :background_color
+  attr_accessible :project_id, :url, :size, :background_color
 
   validates :url, presence: true
   has_many :clicks
