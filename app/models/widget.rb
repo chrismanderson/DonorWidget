@@ -41,6 +41,10 @@ class Widget < ActiveRecord::Base
     @pid ||= DonorsChoose::Project.parse_id_from_url(url)
   end
 
+  def is_funded?
+    funding_status == 'funded' ? true : false
+  end
+
   private
 
   def data
