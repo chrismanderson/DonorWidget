@@ -19,34 +19,6 @@ ActiveRecord::Schema.define(:version => 20120722185237) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "projects", :force => true do |t|
-    t.integer  "pid"
-    t.string   "proposal_url"
-    t.string   "fund_url"
-    t.string   "image_url"
-    t.string   "title"
-    t.string   "short_description"
-    t.string   "fulfillment_trailer"
-    t.integer  "percent_funded"
-    t.decimal  "cost_to_complete"
-    t.decimal  "total_price"
-    t.string   "teacher_name"
-    t.string   "grade_level"
-    t.string   "poverty_level"
-    t.string   "school"
-    t.string   "city"
-    t.integer  "zip"
-    t.string   "state"
-    t.decimal  "latitude"
-    t.decimal  "longitude"
-    t.string   "subject"
-    t.string   "resource"
-    t.datetime "expiration_date"
-    t.string   "funding_status"
-    t.datetime "created_at",          :null => false
-    t.datetime "updated_at",          :null => false
-  end
-
   create_table "showings", :force => true do |t|
     t.integer  "widget_id"
     t.datetime "created_at", :null => false
@@ -63,14 +35,13 @@ ActiveRecord::Schema.define(:version => 20120722185237) do
 
   create_table "widgets", :force => true do |t|
     t.integer  "user_id"
-    t.integer  "project_id"
+    t.text     "url",              :limit => 255
     t.string   "background_color"
     t.string   "size"
     t.string   "rollover_method"
     t.boolean  "archived"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
-    t.text     "url"
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
   end
 
 end

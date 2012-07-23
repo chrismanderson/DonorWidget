@@ -61,9 +61,9 @@ class Widget < ActiveRecord::Base
   end
 
   def is_tint?
-    red = background_color[1] + background_color[2]
-    green = background_color[3] + background_color[4]
-    blue = background_color[5] + background_color[6]
+    red = background_color[1..2]
+    green = background_color[3..4]
+    blue = background_color[5..6]
     total = red.to_i(16) + blue.to_i(16) + green.to_i(16)
     total > 383 ? true : false
   end
