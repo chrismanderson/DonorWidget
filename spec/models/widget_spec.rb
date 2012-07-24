@@ -89,4 +89,28 @@ describe Widget do
       @widget.is_funded?.should be_true
     end
   end
+
+  context "archving from redis" do
+    describe ".archive_clicks" do
+      it "converts clicks stored in redis to clicks stored in ActiveRecord" do
+        @widget.add_click
+        @widget.total_clicks.should == 1
+        @widget.cached_clicks.size.should == 1
+        Widget.archive_clicks
+        @widget.total_clicks.should == 1
+        @widget.cached_clicks.size.should == 0
+      end
+    end
+
+    describe ".archive_showings" do
+      it "converts showings stored in redis to clicks stored in ActiveRecord" do
+        @widget.add_showing
+        @widget.total_showings.should == 1
+        @widget.cached_showings.size.should == 1
+        Widget.archive_showings
+        @widget.total_showings.should == 1
+        @widget.cached_showings.size.should == 0
+      end
+    end
+  end
 end
