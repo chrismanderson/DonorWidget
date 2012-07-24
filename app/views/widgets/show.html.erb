@@ -1,5 +1,6 @@
 <%= widget_id_meta %>
 
+<%= render partial: 'embeds/widget_css', locals: {widget: @widget} %>
 <%= render partial: "templates/widget_#{@widget.size}", locals: {widget: @widget}  %>
 
 <p>Copy and paste this code into your website's HTML to embed this widget on your page:</p>
@@ -10,4 +11,3 @@
 <p>Track this widget's stats here! <%= widget_url(@widget) %></p>
 
 
-<%= render partial: 'embeds/widget_css', locals: {widget: @widget} %>

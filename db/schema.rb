@@ -27,12 +27,12 @@ ActiveRecord::Schema.define(:version => 20120722185237) do
 
   create_table "widgets", :force => true do |t|
     t.string   "url"
-    t.string   "background_color"
+    t.string   "background_color", :default => "#20242b"
     t.string   "size"
     t.string   "rollover_method"
     t.boolean  "archived"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
+    t.datetime "created_at",                              :null => false
+    t.datetime "updated_at",                              :null => false
   end
 
 end
