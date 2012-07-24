@@ -1,1 +1,0 @@
-A widget generation tool for Donor's Choose projects. Create an IAB ad-sized widget to support Donor's Choose.
