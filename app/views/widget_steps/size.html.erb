@@ -1,11 +1,10 @@
 <%= nav_at 'Choose Size' %>
 <div class="span12">
-	<h1>Choose a size:</h1>
 	<%= form_for @widget, url: wizard_path do |f| %>
 	<%= render partial: 'embeds/widget_css', locals: {widget: @widget} %>
 	<div class="row size-step">
 		<div class="span3">
-			<p class="size-label">300x250<%= f.radio_button :size, "med-rect" %></p>
+			<p class="size-label med">300x250<%= f.radio_button :size, "med-rect" %></p>
 		</div>
 		<div class="span3">
 			<%= render partial: "templates/widget_med-rect", locals: {:widget => @widget} %>
@@ -13,7 +12,7 @@
 	</div>
 	<div class="row size-step">
 		<div class="span3">
-			<p class="size-label">180x150<%= f.radio_button :size, "rect" %></p>
+			<p class="size-label rect">180x150<%= f.radio_button :size, "rect" %></p>
 		</div>
 		<div class="span3">
 			<%= render partial: "templates/widget_rect", locals: {:widget => @widget} %>
@@ -21,7 +20,7 @@
 	</div>
 	<div class="row size-step">
 		<div class="span3">
-			<p class="size-label">160x600<%= f.radio_button :size, "wide-sky" %></p>
+			<p class="size-label wide">160x600<%= f.radio_button :size, "wide-sky" %></p>
 		</div>
 		<div class="span3">
 			<%= render partial: "templates/widget_wide-sky", locals: {:widget => @widget} %>

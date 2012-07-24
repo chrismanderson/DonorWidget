@@ -12,7 +12,7 @@ jQuery ->
 
   $('#widget_url').blur (event) ->
     console.log $(this).val()
-    validateDonorsURL($(this).val()) unless $(this).val() == ''
+    validateDonorsURL($(this).val())
 
   $('.random_project').on 'click', (event) ->
     event.preventDefault;
