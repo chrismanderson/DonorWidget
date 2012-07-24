@@ -5,5 +5,5 @@
 $ ->
   $('.colorpicker').colorpicker().on('changeColor', (ev) ->
 	  newColor = ev.color.toHex()
-	  $('.widget').css('background-color', newColor)
+	  $('#dc-donors-choose-widget').parent().css('background-color', newColor)
 	  )
