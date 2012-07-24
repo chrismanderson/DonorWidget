@@ -74,8 +74,12 @@ class Widget < ActiveRecord::Base
     pop_list(showing_key)
   end
 
+  def embed_link
+    embed_url(self, format: :js, host: RAW_URL)
+  end
+
   def embed_code
-    "<script type='text/javascript' src='#{embed_url(self, format: :js, host: "#{RAW_URL}")}'></script>"
+    "<script type='text/javascript' src='#{embed_link}'></script>"
   end
 
   def method_missing(meth, *args, &blk)
@@ -111,10 +115,11 @@ class Widget < ActiveRecord::Base
   end
 
   def is_tint?
-    red = background_color[1..2]
-    green = background_color[3..4]
-    blue = background_color[5..6]
-    total = red.to_i(16) + blue.to_i(16) + green.to_i(16)
+    colors = []
+    3.times do |index|
+      colors << background_color.slice((index * 2) + 1, 2)
+    end
+    total = colors.map{|color| color.to_i(16)}.inject(:+)
     total > 383 ? true : false
   end
 
@@ -123,7 +128,7 @@ class Widget < ActiveRecord::Base
   def project_data
     update_cache unless cache_current?
     JSON.parse(data)
-  end 
+  end
 
   def update_cache
     project = DonorsChoose::Project.by_url(url)
