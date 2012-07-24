@@ -1,3 +1,4 @@
+<%= nav_at 'Customize Color' %>
 <%= widget_id_meta %>
 <div class="span6">
 	<%= form_for @widget, url: wizard_path do |f| %>
@@ -6,7 +7,7 @@
 		  <input id="widget_background_color" name="widget[background_color]" type="text" value="#fc92b3">
 		  <span class="add-on"><i style="background-color: rgb(255, 146, 180)"></i></span>
 		</div>
-		<%= link_to "Previous Step", previous_wizard_path %> or <%= f.submit "Finish", class: "btn btn-success" %>
+		<%= link_to "Previous Step", previous_wizard_path, :class => "class" %> or <%= f.submit "Finish", class: "btn btn-success pjax" %>
 	<% end %>
 </div>
 <% if @widget.size == "leaderboard" %>

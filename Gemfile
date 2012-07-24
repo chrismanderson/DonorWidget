@@ -13,6 +13,8 @@ gem 'redis'
 gem 'resque'
 gem 'bootstrap-colorpicker-rails'
 gem 'jbuilder'
+gem 'rack-pjax'
+gem 'goose'
 
 # group :assets do
 	gem 'bootstrap-colorpicker-rails'
@@ -31,6 +33,7 @@ group :test, :development do
   gem 'mock_redis'
   gem 'vcr'
   gem 'sqlite3'
+  gem 'reek', :git => "git://github.com/mvz/reek.git", :branch => "ripper_ruby_parser-2"
 end
 
 group :test do
