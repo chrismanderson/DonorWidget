@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.pjax
 //= require jquery.zclip.min
 //= require twitter/bootstrap
 //= require_tree .

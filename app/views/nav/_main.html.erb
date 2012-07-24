@@ -1,0 +1,9 @@
+<% content_for :breadcrumb_nav do %>
+  <nav>
+    <ul class="breadcrumb">
+      <%= nav_to 'Enter Project', wizard_path(:project) %>
+      <%= nav_to 'Choose Size', wizard_path(:size) %>
+      <%= nav_to 'Customize Color', wizard_path(:color) %>
+    </ul>
+  </nav>
+<% end %>

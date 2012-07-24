@@ -1,3 +1,4 @@
+<%= nav_at 'Enter Project' %>
 <div class="span12">
   <h1>Paste a project URL:</h1>
   <%= form_for @widget, url: wizard_path, method: :put do |f| %>
@@ -6,7 +7,7 @@
     <%= f.text_field :url, size: 20 %>
   </div>
   <div class="row">
-    <%= f.submit nil, class: "btn btn-primary" %>
+    <%= f.submit nil, class: "btn btn-primary pjax" %>
   </div>
   <% end %>
 </div>
