@@ -1,8 +1,7 @@
 class EmbedsController < ApplicationController
   def show
     @widget = Widget.find(params[:id])
-    @widget.showings.create!
-    @widget.increment_show_count
+    @widget.add_showing
     render layout: false
   end
 

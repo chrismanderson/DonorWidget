@@ -9,7 +9,7 @@
       <span class="dc-given">$<%= widget.funding_needed %></span>
        of <span class="dc-needed">$<%= widget.total_price %></span> donated!
     </div>
-    <a class="dc-donate btn-large btn-danger pull-right" href="<%= widget.fund_url %>" target="_blank">Donate</a>
+    <a class="dc-donate btn-large btn-danger pull-right" href="<%= widget.fund_url %>" data-id="<%= widget.id %>" target="_blank">Donate</a>
     <a href="http://donorschoose.org" target="_blank" class="pull-left" id="dc_donate_button">
       <%= image_tag("DonorsChoose-org-logo.png", id: "dc_logo") %>
     </a>
