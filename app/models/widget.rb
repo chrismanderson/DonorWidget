@@ -8,19 +8,19 @@ class Widget < ActiveRecord::Base
   has_many :showings
 
   def total_clicks
-    clicks.count
+    REDIS.llen("widget_#{id}_clicks")
   end
 
-  def update_show_count
+  def increment_show_count
     REDIS.lpush("widget_#{id}_show", Time.new)
   end
 
   def total_showings
-    showings.count
+    REDIS.llen("widget_#{id}_show")
   end
 
   def embed_code
-    "<script type='text/javascript' src='#{embed_url(self, format: :js, host: "localhost:3000")}'></script>"
+    "<script type='text/javascript' src='#{embed_url(self, format: :js, host: "#{RAW_URL}")}'></script>"
   end
 
   def method_missing(meth, *args, &blk)

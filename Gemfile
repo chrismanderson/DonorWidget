@@ -28,6 +28,7 @@ group :test, :development do
   gem 'capybara'
   gem 'guard-rspec'
   gem 'faker'
+  gem 'mock_redis'
   gem 'vcr'
   gem 'sqlite3'
 end
