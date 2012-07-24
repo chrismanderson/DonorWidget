@@ -6,7 +6,7 @@ function registerClick(widget) {
 
   xmlhttp.send(widgetID);
 }
-
-document.write("<%= escape_javascript(render(:partial => 'widget', :locals => {:widget => @widget})).html_safe %>");
-var widget = document.getElementById("donate_button");
+document.write("<%= escape_javascript(render(:partial => "embeds/widget_css", :locals => {:widget => @widget})).html_safe %>");
+document.write("<%= escape_javascript(render(:partial => "templates/widget_#{@widget.size}", :locals => {:widget => @widget})).html_safe %>");
+var widget = document.getElementById("dc_donate_button");
 widget.addEventListener("click", function() {registerClick(widget)}, false);

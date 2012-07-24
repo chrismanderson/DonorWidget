@@ -11,8 +11,9 @@
     </div>
     <div class='pull-right' id='dc-donate'>
       <span class="dc-needed">$<%= widget.cost_to_complete %> to go!</span><a class="donate btn-large btn-danger pull-right" href="<%= widget.fund_url %>" target="_blank">Donate</a>
-      <a href="http://donorschoose.org" target="_blank">
-        <img alt="Donorschoose-org-logo" id="dc_logo" src="/assets/DonorsChoose-org-logo.png">
+      <a href="http://donorschoose.org" target="_blank" id="dc_donate_button">
+        <%= image_tag("DonorsChoose-org-logo.png", id: "dc_logo") %>
+        
       </a>
     </div>
   </div>
