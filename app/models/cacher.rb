@@ -17,18 +17,18 @@ module Cacher
     end
   
     def push_list(key, value)
-      REDIS.lpush("#{@redis_key}-#{key}", value)
+      REDIS.lpush(key, value)
     end
 
     def pop_list(key)
-      REDIS.lpop("#{@redis_key}-#{key}")
+      REDIS.lpop(key)
     end
 
     def count_list(key)
-      REDIS.llen("#{@redis_key}-#{key}")
+      REDIS.llen(key) || 0
     end
 
     def get_list(key)
-      REDIS.lrange("#{@redis_key}-#{key}", 0, -1) || []
+      REDIS.lrange(key, 0, -1) || []
     end
   end

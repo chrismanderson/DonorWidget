@@ -1,4 +1,4 @@
-<%= widget_id_meta %>
+<%= widget_id_meta(@widget) %>
 
 <%= render partial: 'embeds/widget_css', locals: {widget: @widget} %>
 <%= render partial: "templates/widget_#{@widget.size}", locals: {widget: @widget}  %>

@@ -31,18 +31,16 @@ describe Widget do
   end
 
   describe "#total_clicks" do
-    it "calculates the total number of clicks" do
-     @widget.stub(:count_list).and_return(3)
-     @widget.stub_chain(:clicks, :count).and_return(3)
-     @widget.total_clicks.should == 6
+    it "queries the length of the clicks list in REDIS" do
+     REDIS.should_receive(:llen).with"#{@widget.click_key}"
+     @widget.total_clicks
     end
   end
 
   describe "#total_showing" do
     it "queries the length of the views list in REDIS" do
-     @widget.stub(:count_list).and_return(3)
-     @widget.stub_chain(:showings, :count).and_return(3) 
-     @widget.total_showings.should == 6
+     REDIS.should_receive(:llen).with"#{@widget.showing_key}" 
+     @widget.total_showings
     end
   end
 
