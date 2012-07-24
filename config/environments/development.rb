@@ -34,4 +34,7 @@ DonorsWidget::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = false
+
+  #set the asset host
+  config.action_controller.asset_host = "http://localhost:3000/"
 end
