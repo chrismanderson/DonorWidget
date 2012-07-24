@@ -1,7 +1,6 @@
 <%= nav_at 'Enter Project' %>
 <div class="row">
   <div class="span12 control-group" id="input_field">
-    <h1>Paste a project URL:</h1><br>
     <%= form_for @widget, url: wizard_path, method: :put do |f| %>
     <%= f.text_field :url, size: 20 %>
     <%= image_tag 'ajax-loader.gif', id: 'spinner' %>
