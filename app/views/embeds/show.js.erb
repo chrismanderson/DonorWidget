@@ -8,5 +8,5 @@ function registerClick(widget) {
 }
 document.write("<%= escape_javascript(render(:partial => "embeds/widget_css", :locals => {:widget => @widget})).html_safe %>");
 document.write("<%= escape_javascript(render(:partial => "templates/widget_#{@widget.size}", :locals => {:widget => @widget})).html_safe %>");
-var widget = document.getElementById("dc_donate_button");
+var widget = document.getElementsByClassName("dc-donate")[0];
 widget.addEventListener("click", function() {registerClick(widget)}, false);
