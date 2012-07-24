@@ -27,15 +27,15 @@ class Widget < ActiveRecord::Base
   end
 
   def redis_key
-    "widget-#{pid}"
+    "widget_#{pid}"
   end
 
   def click_key
-    "widget_#{id}_clicks"
+    "#{redis_key}_clicks"
   end
 
   def showing_key
-    "widget_#{id}_showings"
+    "#{redis_key}_showings"
   end
 
   def font_color
