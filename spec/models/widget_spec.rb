@@ -4,6 +4,7 @@ describe Widget do
   use_vcr_cassette
   before(:each) do
     @widget = Widget.create!(url: "http://www.donorschoose.org/project/integration-station-creating-daily-sens/754133/")
+    REDIS.flushall
   end
   
   it "parses its pid from its url" do    
