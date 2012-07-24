@@ -11,6 +11,10 @@ class Widget < ActiveRecord::Base
     REDIS.llen("widget_#{id}_clicks")
   end
 
+  def font_color
+    is_tint? ? 'black' : 'white'
+  end
+
   def increment_show_count
     REDIS.lpush("widget_#{id}_show", Time.new)
   end
@@ -55,6 +59,14 @@ class Widget < ActiveRecord::Base
     funding_status == 'funded' ? true : false
   end
 
+  def is_tint?
+    red = background_color[1..2]
+    green = background_color[3..4]
+    blue = background_color[5..6]
+    total = red.to_i(16) + blue.to_i(16) + green.to_i(16)
+    total > 383 ? true : false
+  end
+
   private
 
   def data
@@ -72,14 +84,6 @@ class Widget < ActiveRecord::Base
 
   def cache_current?
     (JSON.parse(data)["cache_expires"].to_datetime >= DateTime.now) rescue false
-  end
-
-  def is_tint?
-    red = background_color[1..2]
-    green = background_color[3..4]
-    blue = background_color[5..6]
-    total = red.to_i(16) + blue.to_i(16) + green.to_i(16)
-    total > 383 ? true : false
   end
 
   def update_cache

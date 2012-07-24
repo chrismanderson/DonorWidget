@@ -3,7 +3,13 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 $ ->
-  $('.colorpicker').colorpicker().on('changeColor', (ev) ->
-	  newColor = ev.color.toHex()
-	  $('#dc-donors-choose-widget').parent().css('background-color', newColor)
-	  )
+  $(".colorpicker").colorpicker().on "changeColor", (ev) ->
+    newColor = ev.color.toHex()
+    console.log newColor
+    $('#dc-donors-choose-widget').css('background-color', newColor)
+
+# $ ->
+#   $('.colorpicker').colorpicker().on 'changeColor', (ev) ->
+#     newColor = ev.color.toHex()
+#     console.log newColor
+#     $('#dc-donors-choose-widget').css('background-color', newColor + '!important')
