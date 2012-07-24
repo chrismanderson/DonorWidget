@@ -26,21 +26,23 @@ describe Widget do
 
     it "increments the count of view in Redis" do
       REDIS.should_receive(:lpush)
-      @widget.increment_show_count
+      @widget.add_showing
     end
   end
 
   describe "#total_clicks" do
-    it "queries the length of the clicks list in REDIS" do
-     REDIS.should_receive(:llen).with"widget_#{@widget.id}_clicks" 
-     @widget.total_clicks
+    it "calculates the total number of clicks" do
+     @widget.stub(:count_list).and_return(3)
+     @widget.stub_chain(:clicks, :count).and_return(3)
+     @widget.total_clicks.should == 6
     end
   end
 
   describe "#total_showing" do
     it "queries the length of the views list in REDIS" do
-     REDIS.should_receive(:llen).with"widget_#{@widget.id}_show" 
-     @widget.total_showings
+     @widget.stub(:count_list).and_return(3)
+     @widget.stub_chain(:showings, :count).and_return(3) 
+     @widget.total_showings.should == 6
     end
   end
 
