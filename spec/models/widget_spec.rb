@@ -89,4 +89,42 @@ describe Widget do
       @widget.is_funded?.should be_true
     end
   end
+
+  describe "#font_color" do
+  
+    it "returns 'white' for a dark-colored widget" do
+      @widget.stub(:background_color).and_return("#336699")
+      @widget.font_color.should == "white"
+    end
+
+    it "returns 'black' for a light-colored widget" do
+      @widget.stub(:background_color).and_return("#FFCC99")
+      @widget.font_color.should == "black"
+    end
+
+  end
+
+  context "archving from redis" do
+    describe ".archive_clicks" do
+      it "converts clicks stored in redis to clicks stored in ActiveRecord" do
+        @widget.add_click
+        @widget.total_clicks.should == 1
+        @widget.cached_clicks.size.should == 1
+        Widget.archive_clicks
+        @widget.total_clicks.should == 1
+        @widget.cached_clicks.size.should == 0
+      end
+    end
+
+    describe ".archive_showings" do
+      it "converts showings stored in redis to clicks stored in ActiveRecord" do
+        @widget.add_showing
+        @widget.total_showings.should == 1
+        @widget.cached_showings.size.should == 1
+        Widget.archive_showings
+        @widget.total_showings.should == 1
+        @widget.cached_showings.size.should == 0
+      end
+    end
+  end
 end
