@@ -1,7 +1,7 @@
 @import "twitter/bootstrap/bootstrap";
 
 body 					  { padding-top: 60px; background: rgb(32,37,44); color: #fff; }
-#intro div 			{ margin: 150px 0 100px; }
+#intro div 			{ margin: 80px 0 100px; }
 #intro h1 			{ font-size: 60px; font-weight: 100; }
 #intro h1 span  { font-weight: 500; }
 #intro p 				{ font-size: 40px; font-weight: 100; line-height: 40px; margin-bottom: 40px; }
@@ -12,7 +12,8 @@ div.box					{ min-height: 400px; }
 form.well 			{ background-color: #404A59; }
 form label			{ color: #fff; margin-right: 20px; text-align: right; }
 form label, form input[type="text"] { font-size: 20px; display: inline-block; }
-form input[type="text"] { padding: 10px; margin-bottom: 9px; }
+form input[type="text"] { padding: 10px; margin-bottom: 9px; width: 80%; height: 20px;
+}
 form input[type="checkbox"] { width: 20px; }
 div.form-group label { width: auto; }
 .input-append .add-on { height: 30px; width: 30px; margin: -8px 0 0 -4px; }
@@ -45,13 +46,5 @@ input[type="radio"]{margin-left: 10px; vertical-align:5px;}
 // Font Awesome
 @import "fontawesome";
 
-// Your custom LESS stylesheets goes here
-//
-// Since bootstrap was imported above you have access to its mixins which
-// you may use and inherit here
-//
-// If you'd like to override bootstrap's own variables, you can do so here as well
-// See http://twitter.github.com/bootstrap/less.html for their names and documentation
-//
-// Example:
-// @linkColor: #ff0000;
+@sansFontFamily: "proxima-nova","Helvetica Neue", Helvetica, Arial, sans-serif;
+@baseFontSize: 16px;

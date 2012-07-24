@@ -16,6 +16,6 @@
 //= require jquery.zclip.min
 //= require twitter/bootstrap
 //= require_tree .
-//= require chosen-jquery
 //= require bootstrap-colorpicker
 //= require mustache
+//= require rails.validations

@@ -11,6 +11,9 @@ DonorsWidget::Application.routes.draw do
   resources :users
   resources :widgets
   resources :widget_steps
+
+  match 'projects/random' => "projects#random"
+  match 'projects/:id' => "projects#show"
   match '/embeds/string/:id' => 'embeds#to_string'
   match "/logout" => "sessions#destroy", as: "logout"
   match "/login" => "sessions#new", as: "login"
