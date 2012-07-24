@@ -6,10 +6,10 @@
       <div class="dc-bar dc-donations-bar" style="width: <%= widget.percent_funded %>%;"></div>
     </div>
     <div class="dc-donations">
-      <span class="needed">$<%= widget.cost_to_complete %></span> to go!
+      <span class="dc-needed">$<%= widget.cost_to_complete %></span>to go!
      </div>
-    <p class="dc-description"><%= raw widget.short_description %></p>
-    <a class="dc-donate btn-large btn-danger pull-right" href="<%= widget.fund_url %>" data-id="<%= widget.id %>" target="_blank">Donate</a>
+    <p class="dc-description"><%= raw truncate(widget.short_description, :length => 175) %></p>
+    <a class="dc-donate btn btn-large btn-danger pull-right" href="<%= widget.proposal_url %>" target="_blank">Donate</a>
     <a href="http://donorschoose.org" target="_blank" id="dc_donate_button">
       <%= image_tag("DonorsChoose-org-logo.png", id: "dc_logo") %>
     </a>
