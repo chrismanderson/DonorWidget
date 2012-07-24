@@ -10,6 +10,7 @@ gem 'faraday'
 gem 'donors_choose', :git => 'git://github.com/chrismanderson/donors_choose.git'
 gem 'bcrypt-ruby'
 gem 'redis'
+gem 'resque'
 gem 'bootstrap-colorpicker-rails'
 gem 'jbuilder'
 
@@ -27,6 +28,7 @@ group :test, :development do
   gem 'capybara'
   gem 'guard-rspec'
   gem 'faker'
+  gem 'mock_redis'
   gem 'vcr'
   gem 'sqlite3'
 end
