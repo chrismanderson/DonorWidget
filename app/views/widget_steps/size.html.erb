@@ -2,7 +2,7 @@
 <div class="span12">
 	<h1>Choose a size:</h1>
 	<%= form_for @widget, url: wizard_path do |f| %>
-	<%= render partial: 'embeds/widget_css' %>
+	<%= render partial: 'embeds/widget_css', locals: {widget: @widget} %>
 	<div class="row size-step">
 		<div class="span3">
 			<p class="size-label">300x250<%= f.radio_button :size, "med-rect" %></p>
