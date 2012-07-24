@@ -3,11 +3,12 @@
 <head>
   <title>DonorsWidget</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
+  <script type="text/javascript" src="https://use.typekit.com/txe0iyw.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<%= render 'layouts/header_in' %>
   <div class="container">
     <%= flash[:notice] if flash.any? %>
     <%= yield %>
