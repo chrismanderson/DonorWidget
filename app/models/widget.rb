@@ -40,11 +40,11 @@ class Widget < ActiveRecord::Base
   end
 
   def formatted_school
-    school_split[-1]
+    (school_split[-1]).html_safe
   end
 
   def formatted_name
-    school_split[0...-1].join("")
+    (school_split[0...-1].join("")).html_safe
   end
 
   def pid

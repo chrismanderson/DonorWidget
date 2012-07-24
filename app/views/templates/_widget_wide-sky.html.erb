@@ -1,15 +1,15 @@
 <div class="dc-wide-sky">
   <div id='dc-donors-choose-widget' class='dc-wide-sky'>
-    <h2 class="dc-school-name"><%= @widget.formatted_name %></h2>
-    <img src='<%= @widget.image_url %>' id='dc_project_img' />
+    <h2 class="dc-school-name"><%= widget.formatted_name %></h2>
+    <img src='<%= widget.image_url %>' id='dc_project_img' />
     <div class="progress progress-success progress-striped dc-donations-bar-wrapper">
-      <div class="dc-bar dc-donations-bar" style="width: <%= @widget.percent_funded %>%;"></div>
+      <div class="dc-bar dc-donations-bar" style="width: <%= widget.percent_funded %>%;"></div>
     </div>
     <div class="dc-donations">
-      <span class="needed">$<%= @widget.cost_to_complete %></span> to go!
+      <span class="needed">$<%= widget.cost_to_complete %></span> to go!
      </div>
-    <p class="dc-description"><%= @widget.short_description %></p>
-    <a class="dc-donate btn-large btn-danger pull-right" href="<%= @widget.fund_url %>" target="_blank">Donate</a>
+    <p class="dc-description"><%= raw widget.short_description %></p>
+    <a class="dc-donate btn-large btn-danger pull-right" href="<%= widget.fund_url %>" target="_blank">Donate</a>
     <a href="http://donorschoose.org" target="_blank">
       <img alt="Donorschoose-org-logo" id="dc-logo" src="/assets/DonorsChoose-org-logo.png">
     </a>
