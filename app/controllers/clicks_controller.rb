@@ -2,12 +2,13 @@ class ClicksController < ApplicationController
   respond_to :json
 
   def create
-    @click = Click.new(:widget_id => params['widget_id'])
+    REDIS.lpush("widget_#{params['widget_id']}_clicks", Time.new)
+    # widget = Widget.find(params['widget_id'])
+    # @click = Click.new(:widget_id => params['widget_id'])
 
-    if @click.save
-      respond_with(@click, :status => :created)
-    else
-      render :json => {errors: [@click.errors]}
-    end
+  
+    render :json => { :status => :ok }
+    #   render :json => {errors: [@click.errors]}
+    # end
   end
 end

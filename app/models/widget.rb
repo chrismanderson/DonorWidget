@@ -11,6 +11,10 @@ class Widget < ActiveRecord::Base
     clicks.count
   end
 
+  def update_show_count
+    REDIS.lpush("widget_#{id}_show", Time.new)
+  end
+
   def total_showings
     showings.count
   end
