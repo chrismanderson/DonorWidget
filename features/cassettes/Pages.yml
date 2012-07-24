@@ -1,0 +1,67 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.donorschoose.org/common/json_feed.html?APIKey=DONORSCHOOSE&id=816888
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Content-Type:
+      - text/plain;charset=UTF-8
+      Content-Language:
+      - en-US
+      Cache-Control:
+      - private, max-age=600
+      Expires:
+      - Tue, 24 Jul 2012 23:40:42 GMT
+      Date:
+      - Tue, 24 Jul 2012 23:30:42 GMT
+      Content-Length:
+      - '2302'
+      Connection:
+      - keep-alive
+      X-N:
+      - S
+    body:
+      encoding: US-ASCII
+      string: ! "\r\n \r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n \r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\t\r\n\r\n\t
+        \ \t\r\n\r\n\r\n\r\n\r\n\r\n{\n  \"searchTerms\": \"Project 816888\",\n  \"searchURL\":
+        \"http://www.donorschoose.org/donors/search.html?id=816888&amp;utm_source=api&amp;utm_medium=feed&amp;utm_content=searchlink&amp;utm_campaign=DONORSCHOOSE\",\n
+        \ \"totalProposals\": \"1\",\n  \"index\": \"0\",\n  \"max\": \"1\",\n  \"proposals\":
+        [{\n    \"id\": \"816888\",\n    \"proposalURL\": \"http://www.donorschoose.org/project/biotechnology-applications/816888/?utm_source=api&amp;utm_medium=feed&amp;utm_content=bodylink&amp;utm_campaign=DONORSCHOOSE\",\n
+        \   \"fundURL\": \"https://secure.donorschoose.org/donors/givingCart.html?proposalid=816888&amp;donationAmount=&amp;utm_source=api&amp;utm_medium=feed&amp;utm_content=fundlink&amp;utm_campaign=DONORSCHOOSE\",\n
+        \   \"imageURL\": \"http://cdn.donorschoose.net/images/user/uploads/small/u1495447_sm.jpg?timestamp=1341345466340\",\n
+        \   \"title\": \"Biotechnology Applications\",\n    \"shortDescription\":
+        \"Biotechnology is a newer field of Biology. One that fascinates many, but
+        confuses others. Students must know the procedure and technique used to complete
+        gel electrophoresis for their End of...\",\n    \"fulfillmentTrailer\": \"My
+        students need 8 kits to practice DNA Fingerprinting to support curriculum
+        changes in the North Carolina Essential Standards.\",\n    \"percentFunded\":
+        \"0\",\n    \"costToComplete\": \"698.52\",\n    \"matchingFund\": {\n      \"matchingKey\":
+        \"\",\n      \"name\": \"\",\n      \"logoURL\": \"\",\n      \"faqURL\":
+        \"\",\n      \"amount\": \"0.00\"\n    },\n    \"totalPrice\": \"698.52\",\n
+        \   \"freeShipping\": \"true\",\n    \"teacherName\": \"Mrs. Sypole\",\n    \"gradeLevel\":
+        {\n      \"id\": \"4\",\n      \"name\": \"Grades 9-12\"\n    },\n    \"povertyLevel\":
+        \"High Poverty\",\n    \"schoolName\": \"South Brunswick High School\",\n
+        \   \"city\": \"Southport\",\n    \"zip\": \"28461-9006\",\n    \"state\":
+        \"NC\",\n    \"latitude\": \"34.010757000000000\",\n    \"longitude\": \"-78.043579000000000\",\n
+        \   \"zone\": {\n      \"id\": \"301\",\n      \"name\": \"North Carolina\"\n
+        \   },\n    \"subject\": {\n      \"id\": \"4\",\n      \"name\": \"Health
+        &amp; Life Science\",\n      \"groupId\": \"4\"\n    },\n    \"resource\":
+        {\n      \"id\": \"3\",\n      \"name\": \"Supplies\"\n    },\n    \"expirationDate\":
+        \"2012-12-02\",\n    \"fundingStatus\": \"needs funding\"\n  }]\n}\r\n"
+    http_version: 
+  recorded_at: Tue, 24 Jul 2012 23:30:42 GMT
+recorded_with: VCR 2.2.4
