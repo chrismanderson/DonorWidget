@@ -6,7 +6,6 @@ class CreateWidgets < ActiveRecord::Migration
       t.string :size
       t.string :rollover_method
       t.boolean :archived
-
       t.timestamps
     end
   end
