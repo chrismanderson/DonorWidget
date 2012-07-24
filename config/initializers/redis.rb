@@ -8,3 +8,5 @@ else
   REDIS_PASSWORD = nil
 end
 REDIS = Redis.new(:host => REDIS_URL, :port => REDIS_PORT, :password => REDIS_PASSWORD)
+Resque.redis = REDIS
+Resque.after_fork = Proc.new { ActiveRecord::Base.establish_connection }

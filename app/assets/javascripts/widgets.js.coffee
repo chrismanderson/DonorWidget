@@ -3,7 +3,7 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 $ ->
-	$('.colorpicker').colorpicker().on('changeColor', (ev) ->
+  $('.colorpicker').colorpicker().on('changeColor', (ev) ->
 	  newColor = ev.color.toHex()
 	  $('.widget').css('background-color', newColor)
 	  )

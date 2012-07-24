@@ -1,7 +1,16 @@
 <%= widget_id_meta %>
-<div class="widget <%= @widget.size %>" id="widget">
 
+<%= render partial: 'embeds/widget' %>
 </div>
+
+<p>Copy and paste this code into your website's HTML to embed this widget on your page:</p>
+<div id="widgettest" class='btn'>Copy to clipboard</div><br><br><pre id="embed-code"><%= @widget.embed_code %></pre>
+<br>
+<p>This widget has been displayed <%= @widget.total_showings %> times, and has been
+	clicked on <%= @widget.total_clicks %> times.</p>
+<p>Track this widget's stats here! <%= widget_url(@widget) %></p>
+
+
 <%= render partial: 'embeds/widget_css' %>
 <script id='widget-template' type='text/widget'>
 	<div id='donors-choose-widget' class='<%= @widget.size %> clearfix'>
@@ -39,10 +48,12 @@
 			}
 		}
 		document.getElementById('widget').innerHTML = widget;
+
+		$('#widgettest').zclip({
+        path:"<%= asset_path('ZeroClipboard.swf') %>",
+        copy:$('#embed-code').text()
+    });
 </script>
 
 
-<p>Copy and paste this code into your website's HTML to embed this widget on your page:</p>
-<p><%= @widget.embed_code %></p>
-<br>
-<p>Track this widget here! <%= widget_url(@widget) %></p>
+>>>>>>> 612925cc618df86bf7f31a263a73f8fc32dfb6da
