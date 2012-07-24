@@ -33,6 +33,8 @@
 		<div class="span3">
 			<%= render partial: "templates/widget_leaderboard", locals: {:widget => @widget} %>
 		</div>
+
+		<%= f.submit nil, class: "btn btn-primary btn-large pjax", id: "submit-size" %>
 	</div>
 	<% end %>
 </div>

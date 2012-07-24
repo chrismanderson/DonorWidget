@@ -4,6 +4,7 @@
     <%= form_for @widget, url: wizard_path, method: :put do |f| %>
     <%= f.text_field :url, size: 20 %>
     <%= image_tag 'ajax-loader.gif', id: 'spinner' %>
+    <%= f.submit nil, class: "btn btn-primary btn-large pjax", id: "submit-project" %>
   </div>
 </div>
 
@@ -15,10 +16,11 @@
     <div id="status">
     </div>
     <p>Please paste in a DonorsChoose project url. You can search for great projects at <%= link_to "DonorsChoose", "http://donorschoose.org", :target => "_blank" %>. Or, you can <%= link_to "get a random project.", "#", class: "random_project" %></p>
-    <%= f.submit nil, class: "btn btn-primary btn-large pjax", id: "submit-project" %>
+    
+    <% end %>
   </div>
 
   <div class="span4" id="status">
   </div>
-  <% end %>
+  
 </div>
