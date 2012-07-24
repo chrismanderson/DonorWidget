@@ -13,6 +13,7 @@ $ ->
 
   $(".colorpicker").colorpicker().on "changeColor", (ev) ->
     newColor = ev.color.toHex()
+    $('#dc-donors-choose-widget').parent().css('background-color', newColor)
     $('#dc-donors-choose-widget').css('background-color', newColor)
     if is_tint newColor
       $('#dc-donors-choose-widget').css('color', '#000000')
