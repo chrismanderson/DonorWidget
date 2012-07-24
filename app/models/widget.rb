@@ -1,5 +1,6 @@
 class Widget < ActiveRecord::Base
   include Rails.application.routes.url_helpers
+  include Cacher
 
   attr_accessible :project_id, :url, :size, :background_color
 
@@ -7,16 +8,70 @@ class Widget < ActiveRecord::Base
   has_many :clicks
   has_many :showings
 
-  def total_clicks
-    REDIS.llen("widget_#{id}_clicks")
+  def self.archive_clicks
+    Widget.all.each do |widget|
+      while click_time = widget.pop_click do
+        click = widget.clicks.create
+        click.update_attribute(:created_at, click_time.to_date)
+      end
+    end
   end
 
-  def increment_show_count
-    REDIS.lpush("widget_#{id}_show", Time.new)
+  def self.archive_showings
+    Widget.all.each do |widget|
+      while showing_time = widget.pop_showing do
+        showing = widget.showings.create
+        showing.update_attribute(:created_at, showing_time.to_date)
+      end
+    end
+  end
+
+  def redis_key
+    "widget-#{pid}"
+  end
+
+  def click_key
+    "widget_#{id}_clicks"
+  end
+
+  def showing_key
+    "widget_#{id}_showings"
+  end
+
+  def font_color
+    is_tint? ? 'black' : 'white'
+  end
+
+  def total_clicks
+    clicks.count + count_list(click_key)
   end
 
   def total_showings
-    REDIS.llen("widget_#{id}_show")
+    showings.count + count_list(showing_key)
+  end
+
+  def cached_clicks
+    get_list(click_key)
+  end
+
+  def cached_showings
+    get_list(showing_key)
+  end
+
+  def add_showing
+    push_list(showing_key, Time.new)
+  end
+
+  def add_click
+    push_list(click_key, Time.new)
+  end
+
+  def pop_click
+    pop_list(click_key)
+  end
+
+  def pop_showing
+    pop_list(showing_key)
   end
 
   def embed_code
@@ -40,11 +95,11 @@ class Widget < ActiveRecord::Base
   end
 
   def formatted_school
-    school_split[-1]
+    (school_split[-1]).html_safe
   end
 
   def formatted_name
-    school_split[0...-1].join("")
+    (school_split[0...-1].join("")).html_safe
   end
 
   def pid
@@ -55,25 +110,6 @@ class Widget < ActiveRecord::Base
     funding_status == 'funded' ? true : false
   end
 
-  private
-
-  def data
-    REDIS.get(pid)
-  end
-
-  def data= (new_data)
-    REDIS.set(pid, new_data)
-  end
-
-  def project_data
-    update_cache unless cache_current?
-    JSON.parse(data)
-  end
-
-  def cache_current?
-    (JSON.parse(data)["cache_expires"].to_datetime >= DateTime.now) rescue false
-  end
-
   def is_tint?
     red = background_color[1..2]
     green = background_color[3..4]
@@ -82,10 +118,16 @@ class Widget < ActiveRecord::Base
     total > 383 ? true : false
   end
 
+  private
+
+  def project_data
+    update_cache unless cache_current?
+    JSON.parse(data)
+  end 
+
   def update_cache
     project = DonorsChoose::Project.by_url(url)
-    self.data = {
-      :pid => project.id,
+    cache_data({ :pid => project.id,
       :proposal_url => project.proposalURL,
       :fund_url => project.fundURL,
       :image_url => project.imageURL,
@@ -107,8 +149,7 @@ class Widget < ActiveRecord::Base
       :subject => project.subject['name'],
       :resource => project.resource['name'],
       :expiration_date => project.expirationDate,
-      :funding_status => project.fundingStatus,
-      :cache_expires => DateTime.now + 300.seconds
-    }.to_json
+      :funding_status => project.fundingStatus
+    })
   end
 end

@@ -1,19 +1,19 @@
 GIT
   remote: git://github.com/chrismanderson/donors_choose.git
-  revision: 592a4b59b09c8e00f4a188dd0320a7204eba0d6f
+  revision: 9e4931cb9166185f8e3a2cac3556ec8a69cf7001
   specs:
     donors_choose (1.1.0)
       json
 
 GIT
-  remote: git://github.com/mvz/reek.git
-  revision: c21b666e8249627f78024065d99c5f4329355e99
-  branch: ripper_ruby_parser-2
+  remote: git://github.com/seyhunak/twitter-bootstrap-rails.git
+  revision: 908e150800610138e2b48738f842afb85b3a832e
   specs:
-    reek (1.2.8)
-      ripper_ruby_parser (~> 0.0.5)
-      ruby2ruby (~> 1.2.5)
-      sexp_processor (~> 3.0)
+    twitter-bootstrap-rails (2.1.1)
+      actionpack (>= 3.1)
+      less-rails (~> 2.2.3)
+      railties (>= 3.1)
+      therubyracer (= 0.10.1)
 
 GEM
   remote: https://rubygems.org/
@@ -52,6 +52,7 @@ GEM
     bootstrap-colorpicker-rails (0.1)
       railties (>= 3.0)
     builder (3.0.0)
+    cane (1.4.0)
     capybara (1.1.2)
       mime-types (>= 1.16)
       nokogiri (>= 1.3.3)
@@ -61,9 +62,7 @@ GEM
       xpath (~> 0.1.4)
     childprocess (0.3.4)
       ffi (~> 1.0, >= 1.0.6)
-    chosen-rails (0.9.8.1)
-      railties (~> 3.0)
-      thor (~> 0.14)
+    client_side_validations (3.1.4)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0)
@@ -166,15 +165,20 @@ GEM
     rdoc (3.12)
       json (~> 1.4)
     redis (3.0.1)
-    ripper_ruby_parser (0.0.8)
-      sexp_processor (~> 3.0)
     redis-namespace (1.2.0)
       redis (~> 3.0.0)
+    reek (1.2.12)
+      ripper_ruby_parser (~> 0.0.7)
+      ruby2ruby (~> 1.2.5)
+      ruby_parser (~> 2.0)
+      sexp_processor (~> 3.0)
     resque (1.21.0)
       multi_json (~> 1.0)
       redis-namespace (~> 1.0)
       sinatra (>= 0.9.2)
       vegas (~> 0.1.2)
+    ripper_ruby_parser (0.0.8)
+      sexp_processor (~> 3.0)
     rspec (2.11.0)
       rspec-core (~> 2.11.0)
       rspec-expectations (~> 2.11.0)
@@ -226,11 +230,6 @@ GEM
     treetop (1.4.10)
       polyglot
       polyglot (>= 0.3.1)
-    twitter-bootstrap-rails (2.1.1)
-      actionpack (>= 3.1)
-      less-rails (~> 2.2.2)
-      railties (>= 3.1)
-      therubyracer (= 0.10.1)
     tzinfo (0.3.33)
     uglifier (1.2.6)
       execjs (>= 0.3.0)
@@ -238,8 +237,8 @@ GEM
     vcr (2.2.4)
     vegas (0.1.11)
       rack (>= 1.0.0)
-    webmock (1.8.7)
-      addressable (>= 2.2.7)
+    webmock (1.8.8)
+      addressable (~> 2.2.8)
       crack (>= 0.1.7)
     wicked (0.1.6)
       activesupport (>= 3.0.7)
@@ -253,8 +252,9 @@ PLATFORMS
 DEPENDENCIES
   bcrypt-ruby
   bootstrap-colorpicker-rails
+  cane
   capybara
-  chosen-rails
+  client_side_validations
   coffee-rails (~> 3.2.1)
   donors_choose!
   factory_girl_rails
@@ -272,14 +272,14 @@ DEPENDENCIES
   rack-test
   rails (= 3.2.6)
   redis
-  reek!
+  reek
   resque
   rspec-rails
   sass-rails (~> 3.2.3)
   simplecov
   spork
   sqlite3
-  twitter-bootstrap-rails
+  twitter-bootstrap-rails!
   uglifier (>= 1.0.3)
   vcr
   webmock

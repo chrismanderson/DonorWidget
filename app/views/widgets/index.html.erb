@@ -1,5 +1,12 @@
-<ul>
-<% @widgets.each do |widget| %>
-  <%= render widget %>
-<% end %>
-</ul>
+<div class="overflow">
+  <table>
+    <tr>
+    <% @widgets.each do |widget| %>
+      <td>
+      <%= render partial: "embeds/widget_css", locals: { :widget => widget } %>
+      <%= render partial: "templates/widget_#{widget.size}", locals: { :widget => widget } %>
+      </td>
+    <% end %>
+    </tr>
+  </table>
+</div>

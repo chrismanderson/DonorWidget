@@ -1,11 +1,5 @@
 DonorsWidget::Application.routes.draw do
 
-  get "info/iteration1"
-
-  get "info/iteration2"
-
-  get "info/iteration3"
-
   root :to => "info#home"
 
   # The priority is based upon order of creation:
@@ -17,6 +11,9 @@ DonorsWidget::Application.routes.draw do
   resources :users
   resources :widgets
   resources :widget_steps
+
+  match 'projects/random' => "projects#random"
+  match 'projects/:id' => "projects#show"
   match '/embeds/string/:id' => 'embeds#to_string'
   match "/logout" => "sessions#destroy", as: "logout"
   match "/login" => "sessions#new", as: "login"

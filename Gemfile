@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+
 gem 'chosen-rails'
 gem 'rails', '3.2.6'
 gem 'wicked'
@@ -13,13 +14,14 @@ gem 'resque'
 gem 'bootstrap-colorpicker-rails'
 gem 'jbuilder'
 gem 'rack-pjax'
+gem 'client_side_validations'
 gem 'goose'
 
 # group :assets do
 	gem 'bootstrap-colorpicker-rails'
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
-	gem 'twitter-bootstrap-rails'
+	gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
   gem 'uglifier', '>= 1.0.3'
 # end
 
@@ -32,7 +34,8 @@ group :test, :development do
   gem 'mock_redis'
   gem 'vcr'
   gem 'sqlite3'
-  gem 'reek', :git => "git://github.com/mvz/reek.git", :branch => "ripper_ruby_parser-2"
+  gem 'reek'
+  gem 'cane'
 end
 
 group :test do
