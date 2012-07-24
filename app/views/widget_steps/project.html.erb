@@ -1,13 +1,23 @@
 <%= nav_at 'Enter Project' %>
-<div class="span12">
-  <h1>Paste a project URL:</h1>
-  <%= form_for @widget, url: wizard_path, method: :put do |f| %>
-  <div class="row">
-    <%= f.label :url, "Project URL" %>
+<div class="row">
+  <div class="span12 control-group" id="input_field">
+    <h1>Paste a project URL:</h1><br>
+    <%= form_for @widget, url: wizard_path, method: :put do |f| %>
     <%= f.text_field :url, size: 20 %>
+    <%= image_tag 'ajax-loader.gif', id: 'spinner' %>
   </div>
-  <div class="row">
-    <%= f.submit nil, class: "btn btn-primary pjax" %>
+</div>
+
+
+
+  
+<div class="row">
+  <div class="span8">
+    <p>Please paste in a DonorsChoose project url. You can search for great projects at <%= link_to "DonorsChoose", "http://donorschoose.org", :target => "_blank" %>. Or, you can <%= link_to "get a random project.", "#", class: "random_project" %></p>
+    <%= f.submit nil, class: "btn btn-primary btn-large pjax", id: "submit-project" %>
+  </div>
+
+  <div class="span4" id="status">
   </div>
   <% end %>
 </div>
