@@ -10,7 +10,7 @@
       </div>
     </div>
     <div class='pull-right' id='dc-donate'>
-      <span class="dc-needed">$<%= widget.cost_to_complete %></span>to go!<a class="donate btn btn-large btn-danger pull-right" href="<%= widget.proposal_url %>" target="_blank">Donate</a>
+      <span class="dc-needed">$<%= widget.cost_to_complete %></span>to go!<a class="donate btn btn-large btn-danger pull-right" href="<%= widget.proposal_url %>" target="_blank" data-id="<%= widget.id %>">Donate</a>
       <a href="http://donorschoose.org" target="_blank" id="dc_donate_button">
         <%= image_tag("DonorsChoose-org-logo.png", id: "dc_logo") %>
       </a>
