@@ -90,6 +90,20 @@ describe Widget do
     end
   end
 
+  describe "#font_color" do
+  
+    it "returns 'white' for a dark-colored widget" do
+      @widget.stub(:background_color).and_return("#336699")
+      @widget.font_color.should == "white"
+    end
+
+    it "returns 'black' for a light-colored widget" do
+      @widget.stub(:background_color).and_return("#FFCC99")
+      @widget.font_color.should == "black"
+    end
+
+  end
+
   context "archving from redis" do
     describe ".archive_clicks" do
       it "converts clicks stored in redis to clicks stored in ActiveRecord" do
