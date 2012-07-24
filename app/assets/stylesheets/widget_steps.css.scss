@@ -30,3 +30,23 @@ ul.breadcrumb {
 .widget-preview {
   background-color: #ff92b4;
 }
+
+#instructions {
+  font-size: 20px;
+  line-height: 1.5em;
+}
+
+#status {
+  height: 40px;
+  color: #d03c39;
+}
+
+#new_widget {
+  margin-bottom: 0px;
+}
+
+input#widget_url, input#widget_background_color {
+  background-color: #151618;
+  color: white;
+  border-width: 5px;
+}

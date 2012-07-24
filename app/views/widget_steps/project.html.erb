@@ -12,7 +12,9 @@
 
   
 <div class="row">
-  <div class="span8">
+  <div class="span8" id="instructions">
+    <div id="status">
+    </div>
     <p>Please paste in a DonorsChoose project url. You can search for great projects at <%= link_to "DonorsChoose", "http://donorschoose.org", :target => "_blank" %>. Or, you can <%= link_to "get a random project.", "#", class: "random_project" %></p>
     <%= f.submit nil, class: "btn btn-primary btn-large pjax", id: "submit-project" %>
   </div>
