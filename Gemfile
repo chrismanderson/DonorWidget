@@ -33,7 +33,8 @@ group :test, :development do
   gem 'mock_redis'
   gem 'vcr'
   gem 'sqlite3'
-  gem 'reek', :git => "git://github.com/mvz/reek.git", :branch => "ripper_ruby_parser-2"
+  gem 'reek'
+  gem 'cane'
 end
 
 group :test do
