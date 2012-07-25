@@ -1,7 +1,7 @@
 function registerClick(widget) {
   var xmlhttp = new XMLHttpRequest();
   widgetID = "widget_id=" + widget.getAttribute('data-id');
-  xmlhttp.open("POST", "http://localhost:3000/clicks", false);
+  xmlhttp.open("POST", "http://<%= RAW_URL %>/clicks", false);
   xmlhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
 
   xmlhttp.send(widgetID);
