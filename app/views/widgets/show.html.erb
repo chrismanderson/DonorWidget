@@ -1,5 +1,4 @@
 <%= widget_id_meta(@widget) %>
-
 <%= render partial: 'embeds/widget_css', locals: {widget: @widget} %>
 
 <div class="row widget-center">
@@ -24,22 +23,17 @@
 
 <div class="row widget-row">
   <div class="span8 offset1">
-    <h3>This widget has been displayed <strong><%= @widget.total_showings %></strong> times, and has been
-  clicked on <strong><%= @widget.total_clicks %></strong> times.</h3>
-<h3>Track this widget's stats here! <%= widget_url(@widget) %></h3>
+    <h3>This widget has been displayed <strong><%= @widget.total_showings %></strong> times, and has been clicked on <strong><%= @widget.total_clicks %></strong> times.</h3>
+    <h3>Track this widget's stats here! <%= widget_url(@widget) %></h3>
+  </div>
 </div>
-</div>
-
-  
 
 <br>
 
 
-</div>
-</div>
 <script>
   $('#widgettest').zclip({
-        path:'http://zeroclipboard.googlecode.com/svn-history/r10/trunk/ZeroClipboard.swf',
-        copy:$('#embed-code').text()
-    });
+    path:'http://zeroclipboard.googlecode.com/svn-history/r10/trunk/ZeroClipboard.swf',
+    copy:$('#embed-code').text()
+  });
 </script>
