@@ -4,15 +4,15 @@
   .pull-right{float:right;}
   .clearfix{*zoom:1;}.clearfix:before,.clearfix:after{display:table;content:"";}
   .clearfix:after{clear:both;}
-  h2{line-height:20px;margin:0;}
-  h3{line-height:22px;margin:0;}
-  h2.dc-school-name{margin-bottom:5px;font-weight: 500;overflow:hidden;height:25px;width:auto;}
+  h2{line-height:20px;margin:0;height:25px;}
+  h3{line-height:22px;margin:0;height:25px;}
+  h2.dc-school-name{margin-bottom:10px;font-weight: 500;overflow:hidden;width:auto;}
   h3.dc-school-name{width:auto;}
   h2.dc-school-name span, h3.dc-school-name span{font-weight:100;}
   #dc-donors-choose-widget{width:inherit;overflow:hidden;background-color:<%= widget.background_color %>; color:<%= widget.font_color %>;font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;height:inherit;}
   #dc-donors-choose-widget img{margin: 0 auto;}
   .wi3-main{border:1px solid gray;padding:10px;}
-  .dc-med-rect h2.dc-school-name{height:25px;}
+  .dc-med-rect h2.dc-school-name{}
   .dc-med-rect{width:278px;height:228px;background-color:<%= widget.background_color %>;}
   .dc-med-rect .dc-donations-bar-wrapper{margin:5px auto;height:25px!important;}
   .dc-med-rect img{height:50%;}
@@ -21,14 +21,15 @@
   .dc-med-rect img#dc_logo{width:175px;height:26px;margin-top:6px;}
   .dc-med-rect .dc-donations{margin-bottom:9px;}
   .dc-med-rect p.dc-description{font-size:15px;clear:both;}
-  .dc-rect h2.dc-school-name{height:23px;}
+  .dc-med-rect h2{margin-bottom:5px;}
+  .dc-rect h3.dc-school-name{font-size:20px;height:21px;}
   .dc-rect{width:158px;height:128px;background-color:<%= widget.background_color %>;}
   .dc-rect .dc-donations-bar-wrapper{margin:8px auto 2px;height:25px!important;clear:both;}
   .progress-success.progress-striped .dc-bar{height:inherit;}
   .dc-rect .dc-donations{margin-bottom:2px;}
   .dc-rect .dc-donations span{font-size:20px;}
   .dc-rect img#dc_logo{width:100px;height:15px;margin-top:6px;}
-  .dc-wide-sky h2.dc-school-name{height:28px;}
+  .dc-wide-sky h2.dc-school-name{line-height:1.1;height:auto;}
   .dc-wide-sky{width:138px;height:578px;background-color:<%= widget.background_color %>;}
   .dc-wide-sky .progress{margin-bottom:10px;}
   .dc-wide-sky .dc-description{margin:10px 0 20px;font-size:15px;clear:both;}
@@ -36,9 +37,10 @@
   .dc-wide-sky img#dc_logo{width:138px;height:20px;margin-top:6px;}
   .dc-wide-sky .dc-donations-bar-wrapper{height:25px!important;}
   .dc-wide-sky a.dc-donate{margin-bottom:10px;}
-  .dc-leaderboard h2.dc-school-name{margin-bottom:5px;height:30px;}
-  .dc-leaderboard div.dc-school{width:300px;}
+  .dc-leaderboard h2.dc-school-name{margin-bottom:10px;}
+  .dc-leaderboard div.dc-school{width:350px;}
   .dc-leaderboard{width:706px;height:68px;background-color:<%= widget.background_color %>;}
+  .dc-leaderboard h2.dc-school-name{height:28px;}
   .dc-leaderboard .dc-donations-bar-wrapper{margin:10px 0;height:28px!important;width:300px;}
   .dc-leaderboard img#dc_logo{width:175px;height:26px;margin-top:6px;}
   .dc-leaderboard a.dc-donate{margin-left:8px;}
