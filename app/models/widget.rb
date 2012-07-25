@@ -59,19 +59,19 @@ class Widget < ActiveRecord::Base
   end
 
   def add_showing
-    push_list(showing_key, Time.new)
+    insert_into_list(showing_key, Time.new)
   end
 
   def add_click
-    push_list(click_key, Time.new)
+    insert_into_list(click_key, Time.new)
   end
 
   def pop_click
-    pop_list(click_key)
+    remove_from_list(click_key)
   end
 
   def pop_showing
-    pop_list(showing_key)
+    remove_from_list(showing_key)
   end
 
   def embed_link
