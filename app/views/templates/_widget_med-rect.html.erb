@@ -9,7 +9,7 @@
       <span class="dc-given">$<%= widget.funding_needed %></span>
        of <span class="dc-needed">$<%= widget.total_price %></span>donated!
     </div>
-    <a class="dc-donate btn btn-large btn-danger pull-right" href="<%= widget.proposal_url %>" data-id="<%= widget.id %>" target="_blank">Donate</a>
+    <%= render partial: 'templates/widget_buttons', locals: { :widget => widget } %>
     <a href="http://donorschoose.org" target="_blank" class="pull-left" id="dc_donate_button">
       <%= image_tag("DonorsChoose-org-logo.png", id: "dc_logo") %>
     </a>
