@@ -1,16 +1,42 @@
 <%= widget_id_meta(@widget) %>
 
 <%= render partial: 'embeds/widget_css', locals: {widget: @widget} %>
-<%= render partial: "templates/widget_#{@widget.size}", locals: {widget: @widget}  %>
 
-<p>Copy and paste this code into your website's HTML to embed this widget on your page:</p>
-<div id="widgettest" class='btn'>Copy to clipboard</div><br><br><pre id="embed-code"><%= @widget.embed_code %></pre>
+<div class="row widget-center">
+  <%= render partial: "templates/widget_#{@widget.size}", locals: {widget: @widget}  %>
+</div>
+
+<div class="row widget-row">
+  <div class="span11 offset1">
+    <h2>Copy and paste this code into your website's HTML to embed this widget on your page:</h2>
+  </div>
+</div>
+
+<div class="row widget-row">
+  <div class="span8 offset1">
+    <pre id="embed-code"><%= @widget.embed_code %></pre>
+  </div>
+
+  <div class="span3">
+    <div id="widgettest" class='btn btn-primary'>Copy to clipboard</div>
+  </div>
+</div>
+
+<div class="row widget-row">
+  <div class="span8 offset1">
+    <h3>This widget has been displayed <strong><%= @widget.total_showings %></strong> times, and has been
+  clicked on <strong><%= @widget.total_clicks %></strong> times.</h3>
+<h3>Track this widget's stats here! <%= widget_url(@widget) %></h3>
+</div>
+</div>
+
+  
+
 <br>
-<p>This widget has been displayed <%= @widget.total_showings %> times, and has been
-	clicked on <%= @widget.total_clicks %> times.</p>
-<p>Track this widget's stats here! <%= widget_url(@widget) %></p>
 
 
+</div>
+</div>
 <script>
   $('#widgettest').zclip({
         path:'http://zeroclipboard.googlecode.com/svn-history/r10/trunk/ZeroClipboard.swf',
