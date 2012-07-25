@@ -3,9 +3,69 @@ require 'spec_helper'
 describe "Pages" do
   use_vcr_cassette
   describe "when a visitor views the root url" do
-    it "displays the homepage" do
+    before(:each) do
       visit root_url
+    end
+
+    it "displays the homepage" do
       page.should have_content "Easily share the causes you support online."
+    end
+
+    describe "the 'make a widget' button" do
+      it "takes the visitor to the widget workflow" do
+        click_on "Make a widget"
+        page.should have_content 'Please paste in '
+      end
+    end
+  end
+
+  describe "URL page" do
+    before(:each) do
+      visit root_url
+      click_on "Make a widget"
+    end
+
+    context "a good url" do
+      it "moves on to the next step" do
+        fill_in "widget[url]", :with => test_url
+        click_on "Create Widget"
+        page.should have_content test_description
+      end
+    end
+
+    context "bad url entered in box" do
+      before(:each) do
+        fill_in "widget[url]", :with => "foo"
+      end
+      it "has an error message" do
+        page.should have_content "Error Message"
+      end
+
+      it "does not let user to move to next step" do
+        click_on "Create Widge"
+        page.should have_content 'Please paste in '
+      end
+    end
+
+    context "random project button" do
+      it "Fills in a random project from donorschoose" do
+        click_link_or_button 'get a random project'
+        page.should have_content('We found a project! Click next!')
+      end
+    end
+  end
+
+  describe "Choose size page" do
+    before(:each) do
+      visit root_url
+      click_on "Make a widget"
+      fill_in "widget[url]", :with => test_url
+      click_on "Create Widget"
+    end
+
+    it "moves through the workflow when user picks a size" do
+      choose('widget[size]')
+      page.should have_content 'Background Color'
     end
   end
 
