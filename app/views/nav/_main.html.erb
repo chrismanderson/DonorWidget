@@ -3,9 +3,9 @@
     <ul class="breadcrumb">
       <%= nav_to 'Enter Project', wizard_path(:project) %>
       <li>></li>
-      <%= nav_to 'Choose Size', wizard_path(:size) %>
+      <%= nav_to 'Choose Size', wizard_path(:size) if [:size, :color, :finish].include?(@step) %>
       <li>></li>
-      <%= nav_to 'Customize Color', wizard_path(:color) %>
+      <%= nav_to 'Customize Color', wizard_path(:color) if [:color, :finish].include?(@step)%>
     </ul>
   </nav>
 <% end %>
