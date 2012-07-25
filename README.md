@@ -6,7 +6,7 @@ A widget generation tool for Donor's Choose projects. Create an IAB ad-sized wid
 # Installation
 
 1. Clone repo
-2. Start REDIS in the usual way ( redis-server /usr/local/etc/redis.conf )
-3. bundle install
-4. rake db:migrate.
+2. Start REDIS in the usual way ( `redis-server /usr/local/etc/redis.conf` )
+3. `bundle install`
+4. `rake db:migrate`
 That's it! You're ready to start making DonorWidgets!
