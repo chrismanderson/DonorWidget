@@ -1,17 +1,11 @@
 class WidgetsController < ApplicationController
   before_filter :find_widget, only: [:edit, :show, :update, :delete]
 
-  def edit
-  end
-
   def show
     respond_to do |format|
       format.html
       format.json { @widget }
     end
-  end
-
-  def update
   end
 
   private
