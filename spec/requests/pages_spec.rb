@@ -32,27 +32,6 @@ describe "Pages" do
         page.should have_content test_description
       end
     end
-
-    context "bad url entered in box" do
-      before(:each) do
-        fill_in "widget[url]", :with => "foo"
-      end
-      it "has an error message" do
-        page.should have_content "Error Message"
-      end
-
-      it "does not let user to move to next step" do
-        click_on "Create Widge"
-        page.should have_content 'Please paste in '
-      end
-    end
-
-    context "random project button" do
-      it "Fills in a random project from donorschoose" do
-        click_link_or_button 'get a random project'
-        page.should have_content('We found a project! Click next!')
-      end
-    end
   end
 
   describe "Choose size page" do
@@ -65,6 +44,7 @@ describe "Pages" do
 
     it "moves through the workflow when user picks a size" do
       choose('widget[size]')
+      click_on "Update Widget"
       page.should have_content 'Background Color'
     end
   end
