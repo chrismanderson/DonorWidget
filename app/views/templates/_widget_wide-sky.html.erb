@@ -1,6 +1,6 @@
-<div class="dc-wide-sky wi3-main">
+<div class="dc-wide-sky wi3-main" id="<%= widget.id %>">
   <div id='dc-donors-choose-widget' class='dc-wide-sky-1'>
-    <h2 class="dc-school-name"><%= widget.formatted_name %></h2>
+    <h2 class="dc-school-name"><%= widget.formatted_name %><span><%= widget.formatted_school %></span></h2>
     <img src='<%= widget.image_url %>' id='dc_project_img' />
     <div class="progress progress-success progress-striped dc-donations-bar-wrapper">
       <div class="dc-bar dc-donations-bar" style="width: <%= widget.percent_funded %>%;"></div>

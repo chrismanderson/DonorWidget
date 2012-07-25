@@ -1,15 +1,26 @@
+<script type="text/javascript">
+  $(function() {
+    var _results;
+    $(".dc-school-name").css("font-size", "1em");
+    _results = [];
+    while ($(".dc-school-name").height() > $(".dc-school-name").height()) {
+      _results.push($(".dc-school-name").css("font-size", (parseInt($(".dc-school-name").css("font-size")) - 1) + "px"));
+    }
+    return _results;
+  });
+</script>
 <style type="text/css">
   .pull-left {float: left;}
   .clearfix{*zoom:1;}.clearfix:before,.clearfix:after{display:table;content:"";}
   .clearfix:after{clear:both;}
   h2{line-height:20px;}
   h3{line-height:22px;}
-  h2.dc-school-name{margin:0 auto 10px;font-weight: 500;font-size:100%;}
-  h2.dc-school-name span, h3.school-name span{font-weight:100; font-size:100%;}
+  h2.dc-school-name{margin-bottom:10px;font-weight: 500;overflow:hidden;font-size:1em;height:20px;width:180px;}
+  h2.dc-school-name span, h3.dc-school-name span{font-weight:100;}
   #dc-donors-choose-widget{width:inherit;overflow:hidden;background-color:<%= widget.background_color %>; color:<%= widget.font_color %>;font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;height:inherit;}
   #dc-donors-choose-widget img{margin: 0 auto;}
   .wi3-main{border:1px solid gray;padding:10px;}
-  .dc-med-rect{width:300px;height:250px;background-color:<%= widget.background_color %>;}
+  .dc-med-rect{width:278px;height:228px;background-color:<%= widget.background_color %>;}
   .dc-med-rect .dc-donations-bar-wrapper{margin:10px auto;height:25px!important;}
   .dc-med-rect img{height:50%;}
   .dc-med-rect a img{height:auto;}
@@ -25,15 +36,14 @@
   .dc-rect img#dc_logo{width:100px;height:15px;margin-top:6px;}
   .dc-wide-sky{width:138px;height:578px;background-color:<%= widget.background_color %>;}
   .dc-wide-sky .progress{margin-bottom:10px;}
-  .dc-wide-sky h2.dc-school-name{font-size:100%;}
   .dc-wide-sky .dc-description{margin:10px 0 65px;font-size:16px;}
   .dc-wide-sky #dc_project_img{margin:0 0 10px;}
   .dc-wide-sky .dc-donations-bar-wrapper{height:25px!important;}
-  .dc-leaderboard h2.dc-school-name{margin:0 auto 20px;}
+  .dc-leaderboard h2.dc-school-name{margin-bottom:20px;}
   .dc-leaderboard{width:706px;height:68px;background-color:<%= widget.background_color %>;}
   .dc-leaderboard .dc-donations-bar-wrapper{margin:10px 0;height:28px!important;width:300px;}
   .dc-leaderboard img#dc_logo{width:175px;height:26px;margin-top:6px;}
-  .dc-leaderboard a.donate{margin-left:8px;}
+  .dc-leaderboard a.dc-donate{margin-left:8px;}
   .dc-leaderboard div#dc_project_img{margin:0 10px 0 0;}
   .dc-leaderboard div#dc_project_img img{height:70px;}
   .dc-leaderboard div#dc-donate{width:215px;text-align:right;}
