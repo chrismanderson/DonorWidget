@@ -14,10 +14,6 @@ class WidgetsController < ApplicationController
   def update
   end
 
-  def new
-    @widget = current_user.widgets.new
-  end
-
   private
 
   def find_widget
