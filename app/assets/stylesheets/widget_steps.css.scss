@@ -91,9 +91,14 @@ ul.breadcrumb {
 
 #status {
   height: 40px;
-  color: #d03c39;
 }
 
+.error {
+    color: #d03c39;
+  }
+.success {
+    color: #468847;
+  }
 #new_widget {
   margin-bottom: 0px;
 }

@@ -33,14 +33,17 @@ jQuery ->
       $.getJSON "/projects/#{id}", (data) ->
         if data.status == 'success'
           $('#submit-project').removeClass('disabled')
-          $('#status').text ""
+          $('#status').removeClass("error").addClass("success");
+          $('#status').text "We found a project! Click next!"
           $('#input_field').removeClass("error").addClass("success"); 
           $('#spinner').hide()
         else
+          $('#status').removeClass("success").addClass("error");
           $('#status').text "Sorry, we couldn't find a project at that link."
           $('#spinner').hide()
           $('#input_field').removeClass("success").addClass("error"); 
     else
+      $('#status').removeClass("success").addClass("error");
       $('#status').text "Please enter in a correct DonorsChoose link."
       $('#input_field').removeClass("success").addClass("error");
       $('#spinner').hide()
