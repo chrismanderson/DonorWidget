@@ -20,11 +20,11 @@ module Cacher
       JSON.parse(data)["cache_expires"].to_datetime >= DateTime.now rescue false
     end
 
-    def push_list(key, value)
+    def insert_into_list(key, value)
       REDIS.lpush(key, value)
     end
 
-    def pop_list(key)
+    def remove_from_list(key)
       REDIS.lpop(key)
     end
 
