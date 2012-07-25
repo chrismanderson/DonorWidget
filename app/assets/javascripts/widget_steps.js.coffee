@@ -3,6 +3,16 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 jQuery ->
+  handler = (event) ->
+    event.preventDefault()
+    validateDonorsURL($('#widget_url').val())
+    console.log "the links, they do nothing!"
+
+  $("#new_widget").bind('submit', handler)
+
+  $("#new_widget").submit (e) ->
+    validateDonorsURL($('#widget_url').val())
+
   $('#submit-project').addClass('disabled')
   $('#spinner').hide()
   $('.pjax').pjax('[data-pjax-container]')
@@ -37,14 +47,19 @@ jQuery ->
           $('#status').text "We found a project! Click next!"
           $('#input_field').removeClass("error").addClass("success"); 
           $('#spinner').hide()
+          $("#new_widget").unbind('submit', handler)
         else
           $('#status').removeClass("success").addClass("error");
           $('#status').text "Sorry, we couldn't find a project at that link."
           $('#spinner').hide()
           $('#input_field').removeClass("success").addClass("error"); 
+          $("#new_widget").bind('submit', handler)
+          false
     else
       $('#status').removeClass("success").addClass("error");
+      $("#new_widget").bind('submit', handler)
       $('#status').text "Please enter in a correct DonorsChoose link."
       $('#input_field').removeClass("success").addClass("error");
       $('#spinner').hide()
+      false
 
