@@ -6,7 +6,7 @@
       <div class="dc-bar dc-donations-bar" style="width: <%= widget.percent_funded %>%;"></div>
     </div>
     <div class="dc-donations">
-      <span class="dc-needed">$<%= widget.cost_to_complete %></span>to go!
+      <span class="dc-needed">$<%= number_to_currency(widget.cost_to_complete) %></span>to go!
      </div>
     <p class="dc-description"><%= raw truncate(widget.fulfillment_trailer, :length => 175) %></p>
     <%= render partial: 'templates/widget_buttons', locals: { :widget => widget } %>

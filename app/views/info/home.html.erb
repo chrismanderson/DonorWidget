@@ -1,16 +1,22 @@
 <div id="intro" class="row">
-  <div class="span6 pull-left">
+  <div class="span1">
+    <p></p>
+  </div>
+  <div class="span5">
     <h1><span>Donors</span>Widget</h1>
   </div>
-  <div class="span5 pull-left">
+  <div class="span6">
     <p>Easily share the causes you support online.</p>
     <%= link_to "Make a widget", widget_steps_path, class: "btn btn-primary btn-xxxlarge" %>
   </div>
 </div>
 
-<div class="home_content">
+<div class="home-info">
   <div class="row">
-    <div class="span6">
+    <div class="span1">
+      <p></p>
+    </div>
+    <div class="span5">
       <div class="info">
         <h1>Share your favorite project</h1>
         <p>Share your favorite DonorsChoose projects. Spread the word about the school or teacher you want to support!</p>
@@ -18,27 +24,33 @@
     </div>
 
     <div class="span6">
+      <%= link_to image_tag("DonorsChoose-org-logo.png", id: "dc_logo"), "http://donorschoose.org" %>
     </div>
   </div>
-</div>
 
-<div class="home_content">
   <div class="row">
-    <div class="span6">
+    <div class="span1">
+      <p></p>
+    </div>
+    <div class="span5">
       <div class="info">
         <h1>Embeddable widgets</h1>
-        <p>Create widgets you can embed into any webpage.</p>
+        <p>Create customizable widgets you can embed into any webpage.</p>
+        
       </div>
     </div>
 
     <div class="span6">
+      <script type='text/javascript' src='http://localhost:3000/embeds/18.js'></script>
     </div>
   </div>
-</div>
 
-<div class="home_content">
+
   <div class="row">
-    <div class="span6">
+    <div class="span1">
+      <p></p>
+    </div>
+    <div class="span5">
       <div class="info">
         <h1>Analytics</h1>
         <p>Track the number of times your widget has been viewed. And, track the number of times people have clicked the widget.</p>
@@ -46,6 +58,7 @@
     </div>
 
     <div class="span6">
+      <div id="embed-code">This widget has been displayed <strong>1</strong> times, and has been clicked on <strong>0</strong> times.</pre>
     </div>
   </div>
 </div>

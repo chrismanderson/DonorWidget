@@ -6,8 +6,8 @@
       <div class="dc-bar dc-donations-bar" style="width: <%= widget.percent_funded %>%;"></div>
     </div>
     <div class="dc-donations">
-      <span class="dc-given">$<%= widget.funding_needed %></span>
-       of <span class="dc-needed">$<%= widget.total_price %></span>donated!
+      <span class="dc-given"><%= number_to_currency(widget.funding_needed) %></span>
+       of <span class="dc-needed"><%= number_to_currency(widget.total_price) %></span>donated!
     </div>
     <%= render partial: 'templates/widget_buttons', locals: { :widget => widget } %>
     <a href="http://donorschoose.org" target="_blank" class="pull-left" id="dc_donate_button">

@@ -10,7 +10,7 @@
       </div>
     </div>
     <div class='pull-right' id='dc-donate'>
-      <span class="dc-needed">$<%= widget.cost_to_complete %></span>to go!
+      <span class="dc-needed"><%= number_to_currency(widget.cost_to_complete) %></span>to go!
       <%= render partial: 'templates/widget_buttons', locals: { :widget => widget } %>
       <a href="http://donorschoose.org" target="_blank" id="dc_donate_button">
         <%= image_tag("DonorsChoose-org-logo.png", id: "dc_logo") %>
