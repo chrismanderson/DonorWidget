@@ -10,6 +10,9 @@ jQuery ->
 
   $("#new_widget").bind('submit', handler)
 
+  $("#new_widget").submit (e) ->
+    validateDonorsURL($('#widget_url').val())
+
   $('#submit-project').addClass('disabled')
   $('#spinner').hide()
   $('.pjax').pjax('[data-pjax-container]')
@@ -50,9 +53,13 @@ jQuery ->
           $('#status').text "Sorry, we couldn't find a project at that link."
           $('#spinner').hide()
           $('#input_field').removeClass("success").addClass("error"); 
+          $("#new_widget").bind('submit', handler)
+          false
     else
       $('#status').removeClass("success").addClass("error");
+      $("#new_widget").bind('submit', handler)
       $('#status').text "Please enter in a correct DonorsChoose link."
       $('#input_field').removeClass("success").addClass("error");
       $('#spinner').hide()
+      false
 
