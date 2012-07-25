@@ -34,7 +34,8 @@
 			<%= render partial: "templates/widget_leaderboard", locals: {:widget => @widget} %>
 		</div>
 
-		<%= f.submit nil, class: "btn btn-primary btn-large pjax", id: "submit-size" %>
+		
 	</div>
+	<%= f.submit nil, class: "btn btn-primary btn-large pjax", id: "submit-size", style: "position: absolute; left: -9999px; width: 1px; height: 1px;" %>
 	<% end %>
 </div>
