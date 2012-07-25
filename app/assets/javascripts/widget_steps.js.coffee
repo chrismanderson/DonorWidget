@@ -5,6 +5,7 @@
 jQuery ->
   handler = (event) ->
     event.preventDefault()
+    validateDonorsURL($('#widget_url').val())
     console.log "the links, they do nothing!"
 
   $("#new_widget").bind('submit', handler)
