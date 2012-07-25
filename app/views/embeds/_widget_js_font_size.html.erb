@@ -1,0 +1,12 @@
+<script type="text/javascript">
+  var desired_width=$('.dc-school-name').width() - 5;
+  $('#dc-donors-choose-widget').each(function(index, value) {
+    while( $('#dc-donors-choose-widget').width() > desired_width ) { 
+      $('.dc-school-name').css('font-size', (parseInt($('.dc-school-name').css('font-size')) + 1) + "px" ); 
+    }
+  })
+
+  // while(document.getElementById('dc-donors-choose-widget').offsetWidth > document.getElementById('dc-donors-choose-widget').getElementsByTagName('h2').offsetWidth) { 
+  //   document.getElementsByTagName("dc-school-name").style.fontSize, (parseInt(document.getElementsByTagName("dc-school-name").style.fontSize + 1) + "px" ); 
+  // }
+</script>
