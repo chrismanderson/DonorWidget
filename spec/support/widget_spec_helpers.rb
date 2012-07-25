@@ -1,6 +1,6 @@
 module WidgetSpecHelpers
   def test_url
-    "http://www.donorschoose.org/project/biotechnology-applications/816888/"
+    "http://www.donorschoose.org/project/biotechnology-applications/816888"
   end
 
   def test_description
