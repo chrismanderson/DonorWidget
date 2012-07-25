@@ -1,5 +1,5 @@
 class WidgetsController < ApplicationController
-  before_filter :find_widget, only: [:edit, :show, :update, :delete]
+  before_filter :find_widget, only: [:show]
 
   def show
     respond_to do |format|
