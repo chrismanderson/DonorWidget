@@ -1,6 +1,7 @@
 class WidgetStepsController < ApplicationController
   include Wicked::Wizard
   before_filter :find_or_create_widget_from_params, only: :update
+  before_filter :set_step
 
   layout "wizard"
 
@@ -31,5 +32,9 @@ class WidgetStepsController < ApplicationController
         widget.attributes = params[:widget]
         widget.save
     end
+  end
+
+  def set_step
+    @step = step
   end
 end
