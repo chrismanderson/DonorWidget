@@ -10,7 +10,7 @@
 </head>
 <body>
   <%= render 'layouts/header_in' %>
-  <div class="container">
+  <div class="container well">
     <%= flash[:notice] if flash.any? %>
     <%= yield(:breadcrumb_nav) %>
     <div class="pull-left" data-pjax-container>

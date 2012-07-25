@@ -1,33 +1,31 @@
 <script type="text/javascript">
   $(function() {
-    var _results;
-    $(".dc-school-name").css("font-size", "1em");
-    _results = [];
-    while ($(".dc-school-name").height() > $(".dc-school-name").height()) {
-      _results.push($(".dc-school-name").css("font-size", (parseInt($(".dc-school-name").css("font-size")) - 1) + "px"));
-    }
-    return _results;
+      while( $('h2.dc-school-name').height() > $('h2.dc-school-name').height() ) {
+          $('h2.dc-school-name').css('font-size', (parseInt($('h2.dc-school-name').css('font-size')) - 1) + "px" );
+      }
   });
 </script>
 <style type="text/css">
-  .pull-left {float: left;}
+  p{margin:0;padding:0;}
+  .pull-left{float:left;}
+  .pull-right{float:right;}
   .clearfix{*zoom:1;}.clearfix:before,.clearfix:after{display:table;content:"";}
   .clearfix:after{clear:both;}
-  h2{line-height:20px;}
-  h3{line-height:22px;}
+  h2{line-height:20px;margin:0;}
+  h3{line-height:22px;margin:0;}
   h2.dc-school-name{margin-bottom:10px;font-weight: 500;overflow:hidden;font-size:1em;height:20px;width:180px;}
   h2.dc-school-name span, h3.dc-school-name span{font-weight:100;}
   #dc-donors-choose-widget{width:inherit;overflow:hidden;background-color:<%= widget.background_color %>; color:<%= widget.font_color %>;font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;height:inherit;}
   #dc-donors-choose-widget img{margin: 0 auto;}
   .wi3-main{border:1px solid gray;padding:10px;}
   .dc-med-rect{width:278px;height:228px;background-color:<%= widget.background_color %>;}
-  .dc-med-rect .dc-donations-bar-wrapper{margin:10px auto;height:25px!important;}
+  .dc-med-rect .dc-donations-bar-wrapper{margin:5px auto;height:25px!important;}
   .dc-med-rect img{height:50%;}
   .dc-med-rect a img{height:auto;}
-  .dc-med-rect .dc-description{margin:0;font-size:16px;}
+  .dc-med-rect .dc-description{margin:0;font-size:15px;}
   .dc-med-rect img#dc_logo{width:175px;height:26px;margin-top:6px;}
-  .dc-med-rect .dc-donations{margin-bottom:15px;}
-  .dc-med-rect p.dc-description{font-size:16px;}
+  .dc-med-rect .dc-donations{margin-bottom:9px;}
+  .dc-med-rect p.dc-description{font-size:15px;}
   .dc-rect{width:158px;height:128px;background-color:<%= widget.background_color %>;}
   .dc-rect .dc-donations-bar-wrapper{margin:8px auto 2px;height:25px!important;}
   .progress-success.progress-striped .dc-bar{height:inherit;}
@@ -36,9 +34,12 @@
   .dc-rect img#dc_logo{width:100px;height:15px;margin-top:6px;}
   .dc-wide-sky{width:138px;height:578px;background-color:<%= widget.background_color %>;}
   .dc-wide-sky .progress{margin-bottom:10px;}
-  .dc-wide-sky .dc-description{margin:10px 0 65px;font-size:16px;}
-  .dc-wide-sky #dc_project_img{margin:0 0 10px;}
+  .dc-wide-sky h2.dc-school-name{font-size:1em;}
+  .dc-wide-sky .dc-description{margin:10px 0 20px;font-size:15px;}
+  .dc-wide-sky #dc_project_img{margin:0 0 10px;max-width:100%;}
+  .dc-wide-sky img#dc_logo{width:138px;height:20px;margin-top:6px;}
   .dc-wide-sky .dc-donations-bar-wrapper{height:25px!important;}
+  .dc-wide-sky a.dc-donate{margin-bottom:10px;}
   .dc-leaderboard h2.dc-school-name{margin-bottom:20px;}
   .dc-leaderboard{width:706px;height:68px;background-color:<%= widget.background_color %>;}
   .dc-leaderboard .dc-donations-bar-wrapper{margin:10px 0;height:28px!important;width:300px;}
@@ -49,7 +50,6 @@
   .dc-leaderboard div#dc-donate{width:215px;text-align:right;}
   span.dc-needed{font-size:20px;font-weight:normal;line-height:1.6;margin-right:8px;font-weight:bold;}
   .dc-given{font-weight:bold;font-size:20px;}
-  .dc-wide-sky a.dc-donate{margin-bottom:20px;}
   .hide-text{font:0/0 a;color:transparent;text-shadow:none;background-color:transparent;border:0;}
   .input-block-level{display:block;width:100%;min-height:28px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-ms-box-sizing:border-box;box-sizing:border-box;}
   .dc-btn-danger,.dc-btn-danger:hover{color:#ffffff;text-shadow:0 -1px 0 rgba(0, 0, 0, 0.25);text-decoration:none;}
@@ -99,5 +99,5 @@
   .progress-info .dc-bar{background-color:#4bb1cf;background-image:-moz-linear-gradient(top, #5bc0de, #339bb9);background-image:-ms-linear-gradient(top, #5bc0de, #339bb9);background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#5bc0de), to(#339bb9));background-image:-webkit-linear-gradient(top, #5bc0de, #339bb9);background-image:-o-linear-gradient(top, #5bc0de, #339bb9);background-image:linear-gradient(top, #5bc0de, #339bb9);background-repeat:repeat-x;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#5bc0de', endColorstr='#339bb9', GradientType=0);}
   .progress-info.progress-striped .dc-bar{background-color:#5bc0de;background-image:-webkit-gradient(linear, 0 100%, 100% 0, color-stop(0.25, rgba(255, 255, 255, 0.15)), color-stop(0.25, transparent), color-stop(0.5, transparent), color-stop(0.5, rgba(255, 255, 255, 0.15)), color-stop(0.75, rgba(255, 255, 255, 0.15)), color-stop(0.75, transparent), to(transparent));background-image:-webkit-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);background-image:-moz-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);background-image:-ms-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);background-image:-o-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);background-image:linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);}
   .progress-warning .dc-bar{background-color:#faa732;background-image:-moz-linear-gradient(top, #fbb450, #f89406);background-image:-ms-linear-gradient(top, #fbb450, #f89406);background-image:-webkit-gradient(linear, 0 0, 0 100%, from(#fbb450), to(#f89406));background-image:-webkit-linear-gradient(top, #fbb450, #f89406);background-image:-o-linear-gradient(top, #fbb450, #f89406);background-image:linear-gradient(top, #fbb450, #f89406);background-repeat:repeat-x;filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#fbb450', endColorstr='#f89406', GradientType=0);}
-  .progress-warning.progress-striped .dc-bar{background-color:#fbb450;background-image:-webkit-gradient(linear, 0 100%, 100% 0, color-stop(0.25, rgba(255, 255, 255, 0.15)), color-stop(0.25, transparent), color-stop(0.5, transparent), color-stop(0.5, rgba(255, 255, 255, 0.15)), color-stop(0.75, rgba(255, 255, 255, 0.15)), color-stop(0.75, transparent), to(transparent));background-image:-webkit-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);background-image:-moz-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);background-image:-ms-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);background-image:-o-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);background-image:linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);}  
+  .progress-warning.progress-striped .dc-bar{background-color:#fbb450;background-image:-webkit-gradient(linear, 0 100%, 100% 0, color-stop(0.25, rgba(255, 255, 255, 0.15)), color-stop(0.25, transparent), color-stop(0.5, transparent), color-stop(0.5, rgba(255, 255, 255, 0.15)), color-stop(0.75, rgba(255, 255, 255, 0.15)), color-stop(0.75, transparent), to(transparent));background-image:-webkit-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);background-image:-moz-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);background-image:-ms-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);background-image:-o-linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);background-image:linear-gradient(-45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);}
 </style>

@@ -9,7 +9,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div class="container">
+  <div class="container well">
     <%= flash[:notice] if flash.any? %>
     <%= yield %>
   </div>
