@@ -1,7 +1,7 @@
 <div class="dc-wide-sky wi3-main" id="<%= widget.id %>">
   <div id='dc-donors-choose-widget' class='dc-wide-sky-1 clearfix'>
     <div>
-      <h2 class="dc-school-name pull-left"><%= widget.formatted_name %><span><%= widget.formatted_school %></span></h2>
+      <h2 class="dc-school-name pull-left"><%= link_to(widget.formatted_name, widget.url) %><span><%= widget.formatted_school %></span></h2>
     </div>
     <img src='<%= widget.image_url %>' id='dc_project_img' />
     <div class="progress progress-success progress-striped dc-donations-bar-wrapper">
