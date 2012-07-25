@@ -1,7 +1,7 @@
 <div class="dc-med-rect wi3-main">
   <div id='dc-donors-choose-widget' class='dc-med-rect-1'>
     <h2 class="dc-school-name"><%= widget.formatted_name %><span><%= widget.formatted_school %></span></h2>
-    <p class="dc-description"><%= raw truncate(widget.short_description, :length => 175) %></p>
+    <p class="dc-description"><%= raw truncate(widget.fulfillment_trailer, :length => 175) %></p>
     <div class="progress progress-success progress-striped dc-donations-bar-wrapper">
       <div class="dc-bar dc-donations-bar" style="width: <%= widget.percent_funded %>%;"></div>
     </div>
@@ -9,7 +9,7 @@
       <span class="dc-given">$<%= widget.funding_needed %></span>
        of <span class="dc-needed">$<%= widget.total_price %></span>donated!
     </div>
-    <a class="dc-donate btn btn-large btn-danger pull-right" href="<%= widget.proposal_url %>" target="_blank">Donate</a>
+    <%= render partial: 'templates/widget_buttons', locals: { :widget => widget } %>
     <a href="http://donorschoose.org" target="_blank" class="pull-left" id="dc_donate_button">
       <%= image_tag("DonorsChoose-org-logo.png", id: "dc_logo") %>
     </a>

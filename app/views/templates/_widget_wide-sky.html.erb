@@ -8,8 +8,8 @@
     <div class="dc-donations">
       <span class="dc-needed">$<%= widget.cost_to_complete %></span>to go!
      </div>
-    <p class="dc-description"><%= raw truncate(widget.short_description, :length => 175) %></p>
-    <a class="dc-donate btn btn-large btn-danger pull-right" href="<%= widget.proposal_url %>" target="_blank">Donate</a>
+    <p class="dc-description"><%= raw truncate(widget.fulfillment_trailer, :length => 175) %></p>
+    <%= render partial: 'templates/widget_buttons', locals: { :widget => widget } %>
     <a href="http://donorschoose.org" target="_blank" id="dc_donate_button">
       <%= image_tag("DonorsChoose-org-logo.png", id: "dc_logo") %>
     </a>

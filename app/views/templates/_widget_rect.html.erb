@@ -7,6 +7,6 @@
     <div class="dc-donations">
       <span class="dc-needed">$<%= widget.cost_to_complete %></span>needed!
     </div>
-    <a class="dc-donate btn btn-large btn-danger pull-right" href="<%= widget.proposal_url %>" target="_blank">Donate</a>
+    <%= render partial: 'templates/widget_buttons', locals: { :widget => widget } %>
   </div>
 </div>

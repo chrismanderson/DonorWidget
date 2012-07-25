@@ -1,5 +1,5 @@
 <%= nav_at 'Customize Color' %>
-<%= widget_id_meta %>
+<%= widget_id_meta(@widget) %>
 <div class="span6">
 	<%= form_for @widget, url: wizard_path do |f| %>
 		<div class="form-group input-append color colorpicker" data-color="rgb(255, 146, 180)" data-color-format="hex" id="cp3">
@@ -7,7 +7,10 @@
 		  <input id="widget_background_color" name="widget[background_color]" type="text" value="#20252C">
 		  <span class="add-on"><i style="background-color: rgb(255, 146, 180)"></i></span>
 		</div>
-		<%= link_to "Previous Step", previous_wizard_path, :class => "class" %> or <%= f.submit "Finish", class: "btn btn-success pjax" %>
+
+		<div class="row center-button">
+		<%= f.submit "Finish", class: "btn btn-huge btn-success pjax" %> or <%= link_to "Previous Step", previous_wizard_path, :class => "class" %>
+	</div>
 	<% end %>
 </div>
 <% if @widget.size == "leaderboard" %>

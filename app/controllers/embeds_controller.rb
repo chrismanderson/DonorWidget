@@ -4,9 +4,4 @@ class EmbedsController < ApplicationController
     @widget.add_showing
     render layout: false
   end
-
-  def to_string
-    @widget = Widget.find(cookies[:widget_id])
-    @content = render_to_string(partial: "templates/widget_#{@widget.size}", locals: {widget: widget}, layout: false )
-  end
 end

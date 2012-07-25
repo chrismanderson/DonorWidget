@@ -1,4 +1,4 @@
-<%= widget_id_meta %>
+<%= widget_id_meta(@widget) %>
 
 <%= render partial: 'embeds/widget_css', locals: {widget: @widget} %>
 <%= render partial: "templates/widget_#{@widget.size}", locals: {widget: @widget}  %>
@@ -11,3 +11,9 @@
 <p>Track this widget's stats here! <%= widget_url(@widget) %></p>
 
 
+<script>
+  $('#widgettest').zclip({
+        path:'http://zeroclipboard.googlecode.com/svn-history/r10/trunk/ZeroClipboard.swf',
+        copy:$('#embed-code').text()
+    });
+</script>
