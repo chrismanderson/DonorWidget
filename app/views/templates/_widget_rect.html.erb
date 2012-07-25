@@ -1,6 +1,6 @@
 <div class="dc-rect wi3-main" id="<%= widget.id %>">
   <div id='dc-donors-choose-widget' class='dc-rect-1 clearfix'>
-    <h3 class="dc-school-name"><%= link_to(formatted_name(widget), widget.url) %><span><%= formatted_school(widget) %></span></h3>
+    <h3 class="dc-school-name"><%= truncate(widget.school, length: 15) %></h3>
     <div class="progress progress-success progress-striped dc-donations-bar-wrapper">
       <div class="dc-bar dc-donations-bar" style="width: <%= widget.percent_funded %>%;"></div>
     </div>
