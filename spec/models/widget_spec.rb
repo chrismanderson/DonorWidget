@@ -63,27 +63,6 @@ describe Widget do
     end
   end
 
-  describe "#school_split" do
-    it "returns the school name split by spaces" do
-      @widget.stub(:school).and_return("My School")
-      @widget.school_split.should == ["My", "School"]
-    end
-  end
-
-  describe "formatted_school" do
-    it "returns the last word of the school" do
-      @widget.stub(:school).and_return("My School Awesome")
-      @widget.formatted_school.should == "Awesome"
-    end
-  end
-
-  describe "formatted_name" do
-    it "returns the school without spaces and the last element" do
-      @widget.stub(:school).and_return("My School Awesome")
-      @widget.formatted_name.should == "MySchool"
-    end
-  end
-
   describe "#is_funded" do
     it "returns true or false if the project is funded" do
       @widget.stub(:funding_status).and_return("funded")
