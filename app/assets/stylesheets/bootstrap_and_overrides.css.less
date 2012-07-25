@@ -12,7 +12,7 @@ div.box					{ min-height: 400px; }
 form.well 			{ background-color: #404A59; }
 form label			{ color: #fff; margin-right: 20px; text-align: right; }
 form label, form input[type="text"] { font-size: 20px; display: inline-block; }
-form input[type="text"] { padding: 10px; margin-bottom: 9px; width: 80%; height: 20px;
+form input[type="text"] { padding: 10px; margin-bottom: 9px; width: 80%; height: 25px;
 }
 form input[type="checkbox"] { width: 20px; }
 div.form-group label { width: auto; }
@@ -34,6 +34,19 @@ input[type="radio"]{margin-left: 10px; vertical-align:5px;}
 .overflow table td:first-child { padding:0 10px 0 0;}
 .overflow table td:last-child { padding:0 0 0 10px;}
 @import "twitter/bootstrap/responsive";
+
+.btn-huge {
+  padding: 9px 14px;
+  font-size: 35px;
+  font-weight: 600;
+  line-height: normal;
+  -webkit-border-radius: 5px;
+     -moz-border-radius: 5px;
+          border-radius: 5px;
+}
+
+@btnWarningBackground: #f2884c;
+@btnWarningBackgroundHighlight: #c33c09;
 
 // Set the correct sprite paths
 @iconSpritePath: asset-path('twitter/bootstrap/glyphicons-halflings.png');
