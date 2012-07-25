@@ -1,12 +1,14 @@
 <script type="text/javascript">
   var desired_width=$('.dc-school-name').width() - 5;
-  $('#dc-donors-choose-widget').each(function(index, value) {
-    while( $('#dc-donors-choose-widget').width() > desired_width ) { 
-      $('.dc-school-name').css('font-size', (parseInt($('.dc-school-name').css('font-size')) + 1) + "px" ); 
+  var arr = document.getElementsByClassName("wi3-main");
+  var len = arr.length;
+  for (var i=0; i < len; i++) {
+    var header=document.getElementsByClassName("dc-school-name")[i];
+    while(document.getElementById("dc-donors-choose-widget").offsetWidth > header.offsetWidth) { 
+     document.getElementsByClassName("dc-school-name")[i].style.fontSize = (parseInt(header.style.fontSize + 1) + "px" ); 
     }
-  })
-
-  // while(document.getElementById('dc-donors-choose-widget').offsetWidth > document.getElementById('dc-donors-choose-widget').getElementsByTagName('h2').offsetWidth) { 
-  //   document.getElementsByTagName("dc-school-name").style.fontSize, (parseInt(document.getElementsByTagName("dc-school-name").style.fontSize + 1) + "px" ); 
-  // }
+    while(document.getElementById("dc-donors-choose-widget").offsetWidth < header.offsetWidth) { 
+     document.getElementsByClassName("dc-school-name")[i].style.fontSize = (parseInt(header.style.fontSize + 1) - "px" );
+    }
+  }
 </script>
